@@ -38,7 +38,7 @@ function createBrandPersonalizationCriteria(brandNames: string[]): Record<string
   // Create criteria for each brand where enrichment score > 10
   const criteria = brandNames.map(brandName => ({
     l: `brand_${brandName}`,
-    r: '10',
+    r: '3',
     op: '>',
   }));
 
