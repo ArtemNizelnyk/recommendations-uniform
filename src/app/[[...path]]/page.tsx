@@ -20,6 +20,7 @@ export default async function Home(props: PageParameters) {
     }
   }
 
+  //console.log('route', route.compositionApiResponse.composition.slots.pageContent[0].slots.deals[0].slots.pz[11]);
   const searchParams = await props.searchParams;
   const isPreviewMode = searchParams?.is_incontext_editing_mode === 'true';
   return (

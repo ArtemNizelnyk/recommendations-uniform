@@ -1,8 +1,9 @@
 'use client';
 
 import { FC, useEffect, useState } from 'react';
-import { ComponentProps, UniformSlot, UniformText } from '@uniformdev/canvas-next-rsc/component';
-import { extractBrandIdsFromCriteria, formatBrandIdForLookup } from '@/utils/brandCriteria';
+import Image from 'next/image';
+import { ComponentProps, UniformText } from '@uniformdev/canvas-next-rsc/component';
+import { formatBrandIdForLookup } from '@/utils/brandCriteria';
 
 // Here, you can add parameters to be used on the canvas side.
 export type DealParameters = {
@@ -15,7 +16,7 @@ export type DealParameters = {
     }>;
   };
   compositionData?: {
-    value?: any;
+    value?: Record<string, unknown>;
   };
   brands?: {
     value?: Array<{
@@ -55,7 +56,7 @@ type DealProps = ComponentProps<DealParameters, DealSlots>;
 // Global brand cache to reduce API calls
 const globalBrandCache = new Map<string, BrandData>();
 
-const Deal: FC<DealProps> = ({ component, context, slots }) => {
+const Deal: FC<DealProps> = ({ component, context }) => {
   const displayName = component?.parameters?.displayName?.value || 'Deal';
 
   // Fix the type error by safely accessing the image URL
@@ -101,7 +102,7 @@ const Deal: FC<DealProps> = ({ component, context, slots }) => {
       setIsLoading(true);
       try {
         // Extract brand IDs using the new criteria format
-        const brandIds = extractBrandIdsFromCompositionData(compositionData);
+        const brandIds = extractBrandIdsFromCompositionData(compositionData as Record<string, unknown>);
         if (brandIds.length === 0) {
           setBrands([]);
           return;
@@ -142,19 +143,24 @@ const Deal: FC<DealProps> = ({ component, context, slots }) => {
           throw new Error('Failed to fetch brand data');
         }
 
-        const fetchedBrands: BrandData[] = await response.json();
+        const data = await response.json();
+
+        // Check if the response has the expected structure
+        if (!data.brands || !Array.isArray(data.brands)) {
+          throw new Error('Invalid response format from brands API');
+        }
 
         // Update the cache with the new brands
-        fetchedBrands.forEach(brand => {
+        data.brands.forEach((brand: BrandData) => {
           globalBrandCache.set(brand.id, brand);
         });
 
         // Combine cached and newly fetched brands
-        setBrands([...cachedBrands, ...fetchedBrands]);
+        setBrands([...cachedBrands, ...data.brands]);
       } catch (error) {
         console.error('Error fetching brand data:', error);
         // Fallback to simplified brand data
-        const brandIds = extractBrandIdsFromCompositionData(compositionData);
+        const brandIds = extractBrandIdsFromCompositionData(compositionData as Record<string, unknown>);
         const simplifiedBrands = brandIds.map(id => ({
           id,
           name: formatBrandId(id),
@@ -179,7 +185,9 @@ const Deal: FC<DealProps> = ({ component, context, slots }) => {
         {/* Deal image */}
         <div className="mb-4 h-40 overflow-hidden rounded-md bg-gray-100">
           {imageUrl ? (
-            <img src={imageUrl} alt={displayName as string} className="h-full w-full object-cover" />
+            <div className="relative size-full">
+              <Image src={imageUrl} alt={displayName as string} fill className="object-cover" />
+            </div>
           ) : (
             <div className="flex h-full items-center justify-center">
               <span className="text-gray-400">No image available</span>
@@ -211,7 +219,9 @@ const Deal: FC<DealProps> = ({ component, context, slots }) => {
               {brands.map(brand => (
                 <div key={brand.id} className="flex items-center gap-2 rounded-lg bg-gray-100 px-3 py-2">
                   {brand.logo && (
-                    <img src={brand.logo} alt={brand.name} className="h-6 w-6 rounded-full object-cover" />
+                    <div className="relative size-6 overflow-hidden rounded-full">
+                      <Image src={brand.logo} alt={brand.name} fill className="object-cover" />
+                    </div>
                   )}
                   <span className="text-sm font-medium text-gray-800">{brand.name}</span>
                 </div>
@@ -232,40 +242,88 @@ const Deal: FC<DealProps> = ({ component, context, slots }) => {
 };
 
 // Helper function to extract brand IDs from composition data with the new criteria format
-function extractBrandIdsFromCompositionData(compositionData: any): string[] {
+function extractBrandIdsFromCompositionData(compositionData: Record<string, unknown>): string[] {
   try {
     // Check if we have the criteria directly in the composition data
-    if (compositionData && compositionData.$pzCrit && compositionData.$pzCrit.type === '$pzCrit') {
-      const brandNames = extractBrandIdsFromCriteria(compositionData.$pzCrit);
-      return brandNames.map(name => formatBrandIdForLookup(name));
+    if (
+      compositionData &&
+      '$pzCrit' in compositionData &&
+      typeof compositionData.$pzCrit === 'object' &&
+      compositionData.$pzCrit &&
+      'type' in compositionData.$pzCrit &&
+      compositionData.$pzCrit.type === '$pzCrit'
+    ) {
+      // Use a more generic approach to extract brand IDs from criteria
+      const pzCrit = compositionData.$pzCrit as Record<string, unknown>;
+      if (pzCrit.value && typeof pzCrit.value === 'object') {
+        const value = pzCrit.value as Record<string, unknown>;
+        if (value.crit && Array.isArray(value.crit)) {
+          return value.crit
+            .filter(
+              criterion =>
+                typeof criterion === 'object' &&
+                criterion !== null &&
+                'l' in criterion &&
+                typeof criterion.l === 'string' &&
+                criterion.l.startsWith('brand_')
+            )
+            .map(criterion => {
+              const brandName = (criterion as { l: string }).l.replace('brand_', '');
+              return formatBrandIdForLookup(brandName);
+            });
+        }
+      }
     }
 
     // Check if criteria is in a different format or location
-    if (compositionData && compositionData.criteria) {
+    if (compositionData && 'criteria' in compositionData && Array.isArray(compositionData.criteria)) {
       // Try to find brand criteria in the criteria array
       const brandCriteria = compositionData.criteria.find(
-        (crit: any) => crit && crit.l && (crit.l.startsWith('brand:') || crit.l.startsWith('brand_'))
+        (crit: unknown) =>
+          typeof crit === 'object' &&
+          crit !== null &&
+          'l' in crit &&
+          typeof crit.l === 'string' &&
+          (crit.l.startsWith('brand:') || crit.l.startsWith('brand_'))
       );
 
-      if (brandCriteria) {
+      if (
+        brandCriteria &&
+        typeof brandCriteria === 'object' &&
+        'l' in brandCriteria &&
+        typeof brandCriteria.l === 'string'
+      ) {
         // Extract brand name from the criterion
-        const brandName = brandCriteria.l.replace(/^brand[_:]/, '');
+        const brandName = (brandCriteria as { l: string }).l.replace(/^brand[_:]/, '');
         const formattedName = brandName.charAt(0).toUpperCase() + brandName.slice(1);
         return [formatBrandIdForLookup(formattedName)];
       }
     }
 
     // If not, look for brand references in _dataResources
-    const brandsRef = Object.entries(compositionData?._dataResources || {}).find(([key]) => key.includes('-brands'));
+    if (
+      compositionData &&
+      '_dataResources' in compositionData &&
+      typeof compositionData._dataResources === 'object' &&
+      compositionData._dataResources
+    ) {
+      const dataResources = compositionData._dataResources as Record<string, unknown>;
+      const brandsRef = Object.entries(dataResources).find(([key]) => key.includes('-brands'));
 
-    if (!brandsRef || !brandsRef[1]) return [];
+      if (!brandsRef || !brandsRef[1] || typeof brandsRef[1] !== 'object') return [];
 
-    // Extract entryIds from the reference
-    const entryIds = (brandsRef[1] as any)?.variables?.entryIds;
-    if (!entryIds) return [];
+      // Extract entryIds from the reference
+      const brandsRefObj = brandsRef[1] as Record<string, unknown>;
+      if (!('variables' in brandsRefObj) || typeof brandsRefObj.variables !== 'object') return [];
 
-    // Split the comma-separated IDs into an array
-    return entryIds.split(',');
+      const variables = brandsRefObj.variables as Record<string, unknown>;
+      if (!('entryIds' in variables) || typeof variables.entryIds !== 'string') return [];
+
+      // Split the comma-separated IDs into an array
+      return variables.entryIds.split(',');
+    }
+
+    return [];
   } catch (error) {
     console.error('Error extracting brand IDs:', error);
     return [];

@@ -4,19 +4,27 @@
 import { ContentClient } from '@uniformdev/canvas';
 
 // Extract brand IDs from composition data
-function extractBrandIdsFromCompositionData(compositionData: any): string[] {
+function extractBrandIdsFromCompositionData(compositionData: Record<string, unknown>): string[] {
   try {
     // Find the brands reference in _dataResources
-    const brandsRef = Object.entries(compositionData?._dataResources || {}).find(([key]) => key.includes('-brands'));
+    if (!compositionData || typeof compositionData !== 'object' || !('_dataResources' in compositionData)) {
+      return [];
+    }
 
-    if (!brandsRef || !brandsRef[1]) return [];
+    const dataResources = compositionData._dataResources as Record<string, unknown>;
+    const brandsRef = Object.entries(dataResources).find(([key]) => typeof key === 'string' && key.includes('-brands'));
+
+    if (!brandsRef || !brandsRef[1] || typeof brandsRef[1] !== 'object') return [];
 
     // Extract entryIds from the reference
-    const entryIds = (brandsRef[1] as any)?.variables?.entryIds;
-    if (!entryIds) return [];
+    const brandsRefObj = brandsRef[1] as Record<string, unknown>;
+    if (!('variables' in brandsRefObj) || typeof brandsRefObj.variables !== 'object') return [];
+
+    const variables = brandsRefObj.variables as Record<string, unknown>;
+    if (!('entryIds' in variables) || typeof variables.entryIds !== 'string') return [];
 
     // Split the comma-separated IDs into an array
-    return entryIds.split(',');
+    return variables.entryIds.split(',');
   } catch (error) {
     console.error('Error extracting brand IDs:', error);
     return [];
@@ -24,7 +32,7 @@ function extractBrandIdsFromCompositionData(compositionData: any): string[] {
 }
 
 // Create personalization criteria for brands with OR operator
-function createBrandPersonalizationCriteria(brandNames: string[]): any {
+function createBrandPersonalizationCriteria(brandNames: string[]): Record<string, unknown> | null {
   if (!brandNames.length) return null;
 
   // Create criteria for each brand where enrichment score > 10
@@ -113,20 +121,46 @@ async function getBrandNamesFromIds(brandIds: string[]): Promise<string[]> {
 /**
  * Transform the composition data to wrap deals in a personalization component
  */
-export async function transformRecommendationsInComposition(composition: any): Promise<any> {
+export async function transformRecommendationsInComposition(
+  composition: Record<string, unknown> | null
+): Promise<Record<string, unknown> | null> {
   if (!composition) return composition;
 
   // Create a deep copy of the composition to avoid mutating the original
   const transformedComposition = JSON.parse(JSON.stringify(composition));
 
   // Find the recommendationsList component in pageContent
-  const pageContent = transformedComposition.slots?.pageContent || [];
-  const recommendationsIndex = pageContent.findIndex((component: any) => component.type === 'recommendationsList');
+  if (!transformedComposition.slots || typeof transformedComposition.slots !== 'object') {
+    return transformedComposition;
+  }
+
+  const slots = transformedComposition.slots as Record<string, unknown>;
+  if (!slots.pageContent || !Array.isArray(slots.pageContent)) {
+    return transformedComposition;
+  }
+
+  const pageContent = slots.pageContent;
+  const recommendationsIndex = pageContent.findIndex(
+    (component: unknown) =>
+      typeof component === 'object' &&
+      component !== null &&
+      'type' in component &&
+      component.type === 'recommendationsList'
+  );
 
   if (recommendationsIndex === -1) return transformedComposition;
 
-  const recommendationsList = pageContent[recommendationsIndex];
-  const deals = recommendationsList.slots?.deals || [];
+  const recommendationsList = pageContent[recommendationsIndex] as Record<string, unknown>;
+  if (!recommendationsList.slots || typeof recommendationsList.slots !== 'object') {
+    return transformedComposition;
+  }
+
+  const recommendationsSlots = recommendationsList.slots as Record<string, unknown>;
+  if (!recommendationsSlots.deals || !Array.isArray(recommendationsSlots.deals)) {
+    return transformedComposition;
+  }
+
+  const deals = recommendationsSlots.deals;
 
   if (deals.length === 0) return transformedComposition;
 
@@ -144,13 +178,21 @@ export async function transformRecommendationsInComposition(composition: any): P
       },
     },
     slots: {
-      pz: [] as any[],
+      pz: [] as unknown[],
     },
   };
 
   // Process each deal
   for (const deal of deals) {
-    const compositionData = deal.parameters?.compositionData?.value;
+    if (typeof deal !== 'object' || !deal || !('parameters' in deal)) continue;
+
+    const dealParams = deal.parameters as Record<string, unknown>;
+    if (!dealParams.compositionData || typeof dealParams.compositionData !== 'object') continue;
+
+    const compositionDataParam = dealParams.compositionData as Record<string, unknown>;
+    if (!('value' in compositionDataParam)) continue;
+
+    const compositionData = compositionDataParam.value as Record<string, unknown>;
     if (!compositionData) continue;
 
     // Extract brand IDs from the composition data
@@ -169,7 +211,7 @@ export async function transformRecommendationsInComposition(composition: any): P
     const personalizedDeal = {
       ...deal,
       parameters: {
-        ...deal.parameters,
+        ...dealParams,
         $pzCrit: {
           type: '$pzCrit',
           value: pzCrit,
@@ -181,30 +223,8 @@ export async function transformRecommendationsInComposition(composition: any): P
     personalizationComponent.slots.pz.push(personalizedDeal);
   }
 
-  // Add a default variation with all original deals
-  // Create a DealGrid component that contains all the original deals
-  const dealGridComponent = {
-    type: 'dealGrid',
-    parameters: {
-      displayName: {
-        type: 'text',
-        value: 'Featured Deals',
-      },
-      showWarning: {
-        type: 'boolean',
-        value: true,
-      },
-    },
-    slots: {
-      deals: deals,
-    },
-  };
-
-  // Add the DealGrid as the last variation (fallback)
-  personalizationComponent.slots.pz.push(dealGridComponent);
-
   // Replace the deals slot with the personalization component
-  recommendationsList.slots.deals = [personalizationComponent];
+  recommendationsSlots.deals = [personalizationComponent];
 
   return transformedComposition;
 }
