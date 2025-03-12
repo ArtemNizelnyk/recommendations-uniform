@@ -15,8 +15,12 @@ export default async function Home(props: PageParameters) {
     const composition = route.compositionApiResponse.composition;
     if (composition) {
       // Transform the composition
-      //console.log('route', route.compositionApiResponse.composition.slots.pageContent[0].slots);
-      route.compositionApiResponse.composition = await transformRecommendationsInComposition(composition);
+      const transformedComposition = await transformRecommendationsInComposition(composition);
+      // Only assign if the transformed composition is not null
+      if (transformedComposition) {
+        // Use type assertion to ensure the transformed composition matches the expected type
+        route.compositionApiResponse.composition = transformedComposition as typeof composition;
+      }
     }
   }
 

@@ -123,7 +123,7 @@ async function getBrandNamesFromIds(brandIds: string[]): Promise<string[]> {
  */
 export async function transformRecommendationsInComposition(
   composition: Record<string, unknown> | null
-): Promise<Record<string, unknown> | null> {
+): Promise<typeof composition> {
   if (!composition) return composition;
 
   // Create a deep copy of the composition to avoid mutating the original
