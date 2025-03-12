@@ -1,0 +1,76 @@
+created: '2025-02-26T21:22:41.81699+00:00'
+modified: '2025-02-26T23:19:51.426275+00:00'
+pattern: false
+entry:
+  _id: e5694ca2-14e4-455f-8144-6554f3f5c8c5
+  _name: 'Tech Tuesday Sale: Up to 50% Off'
+  _slug: tech-tuesday-sale-up-to-50percent-off
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/k46b6P6bTs-5YeYJRsCYZQ-image.png
+  type: deal
+  fields:
+    url:
+      type: link
+      value:
+        path: /${locale}/deals/tech-tuesday-sale-up-to-50percent-off
+        type: projectMapNode
+        nodeId: fdc238e6-2f87-404d-abfa-078d7dc64678
+        projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9
+        dynamicInputValues:
+          deal: tech-tuesday-sale-up-to-50percent-off
+          locale: ${locale}
+    brands:
+      type: contentReference
+      value: ${#jptr:/ref-e5694ca2-14e4-455f-8144-6554f3f5c8c5-brands/entries}
+    displayName:
+      type: text
+      value: 'Tech Tuesday Sale: Up to 50% Off'
+    responsiveImage:
+      type: asset
+      locales:
+        en:
+          - _id: 8b2e15d2-d09a-41a7-a257-fcdd1244dacc
+            type: image
+            fields:
+              id:
+                type: text
+                value: 00dd8ce1-2560-42de-b331-b29782fc50e2
+              url:
+                value: >-
+                  https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/k46b6P6bTs-5YeYJRsCYZQ-image.png
+                type: text
+              file:
+                type: file
+                value: 85a5bc42-8e64-4ca4-9028-397748195eb4
+              size:
+                value: 80952
+                type: number
+              title:
+                type: text
+                value: image.png
+              width:
+                value: 328
+                type: number
+              height:
+                value: 154
+                type: number
+              mediaType:
+                value: image/png
+                type: text
+            _source: uniform-assets
+      value: []
+    programmaticPersonalizationAudience:
+      type: text
+      value: americansignal
+    programmaticPersonalizationEnrichmentScore:
+      type: text
+      value: Apple
+  _dataResources:
+    ref-e5694ca2-14e4-455f-8144-6554f3f5c8c5-brands:
+      type: uniformContentInternalReference
+      variables:
+        locale: ${locale}
+        entryIds: >-
+          eca3c9c3-c74a-40a2-8f1f-5b2af05b9390,b16e536e-85e5-48b8-965f-bfe607fce861
+  _locales:
+    - en

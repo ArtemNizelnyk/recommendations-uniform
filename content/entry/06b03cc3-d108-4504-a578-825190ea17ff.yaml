@@ -1,0 +1,48 @@
+created: '2025-02-26T21:20:49.423767+00:00'
+modified: '2025-02-26T21:21:16.44764+00:00'
+pattern: false
+entry:
+  _id: 06b03cc3-d108-4504-a578-825190ea17ff
+  _name: Wayfair
+  _slug: wayfair
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/qOs4M7jrSRu7oyQzs1qtNw-image.png
+  type: brand
+  fields:
+    brandLogo:
+      type: asset
+      value:
+        - _id: 3c24e0c7-9b2f-4c5a-a060-5fce4ff79137
+          type: image
+          fields:
+            id:
+              type: text
+              value: 0659dbaf-ca92-4bf5-9dc1-9ba478117e00
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/qOs4M7jrSRu7oyQzs1qtNw-image.png
+              type: text
+            file:
+              type: file
+              value: 7a637fa7-d7fe-4e26-8361-f2d23721500f
+            size:
+              value: 179993
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 3840
+              type: number
+            height:
+              value: 2160
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    displayname:
+      type: text
+      value: Wayfair
+  _locales:
+    - en

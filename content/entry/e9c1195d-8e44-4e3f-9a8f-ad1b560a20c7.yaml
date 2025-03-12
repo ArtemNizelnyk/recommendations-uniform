@@ -1,0 +1,48 @@
+created: '2025-02-26T21:01:09.002009+00:00'
+modified: '2025-02-26T21:01:32.583777+00:00'
+pattern: false
+entry:
+  _id: e9c1195d-8e44-4e3f-9a8f-ad1b560a20c7
+  _name: IKEA
+  _slug: ikea
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/4rIvMhC0RPGIwwD6H32cEw-image.png
+  type: brand
+  fields:
+    brandLogo:
+      type: asset
+      value:
+        - _id: ad9f287a-87b9-4963-a53f-1b99cc5ebb91
+          type: image
+          fields:
+            id:
+              type: text
+              value: f94d99f5-5e7e-4680-807c-be5e216ad549
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/4rIvMhC0RPGIwwD6H32cEw-image.png
+              type: text
+            file:
+              type: file
+              value: d46e9946-f523-49d2-9007-0af97e77d7f9
+            size:
+              value: 21635
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 900
+              type: number
+            height:
+              value: 343
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    displayname:
+      type: text
+      value: IKEA
+  _locales:
+    - en

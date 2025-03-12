@@ -1,0 +1,48 @@
+created: '2025-02-26T21:19:26.582707+00:00'
+modified: '2025-02-26T21:19:58.082094+00:00'
+pattern: false
+entry:
+  _id: eca3c9c3-c74a-40a2-8f1f-5b2af05b9390
+  _name: Apple
+  _slug: apple
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/aePZ005FRHOg-1JR1SgVbQ-image.png
+  type: brand
+  fields:
+    brandLogo:
+      type: asset
+      value:
+        - _id: 6be69962-e368-4873-8b3b-bbfa3736b9f2
+          type: image
+          fields:
+            id:
+              type: text
+              value: 8fea4e74-ee8e-444d-85ba-94919799ad3b
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/aePZ005FRHOg-1JR1SgVbQ-image.png
+              type: text
+            file:
+              type: file
+              value: 7b8d42cd-8d98-4c2f-9771-ac8d6efcdeba
+            size:
+              value: 140131
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 1920
+              type: number
+            height:
+              value: 1080
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    displayname:
+      type: text
+      value: Apple
+  _locales:
+    - en

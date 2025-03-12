@@ -1,0 +1,16 @@
+id: americansignal
+name: AmericanSignal
+cap: 100
+crit:
+  op: '&'
+  type: G
+  clauses:
+    - type: QS
+      match:
+        cs: false
+        op: '='
+        rhs: usa
+      queryName: country
+dur: t
+description: ''
+str: 50

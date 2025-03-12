@@ -1,0 +1,76 @@
+created: '2025-02-26T21:25:15.982509+00:00'
+modified: '2025-02-26T23:19:26.318022+00:00'
+pattern: false
+entry:
+  _id: 2b26c791-6fd4-4cee-bc0a-1c0bbc8fcac4
+  _name: 'Home Decor Discounts: Refresh Your Space'
+  _slug: home-decor-discounts-refresh-your-space
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/Q8mcR7FST8WqsxHg0TtTTg-image.png
+  type: deal
+  fields:
+    url:
+      type: link
+      value:
+        path: /${locale}/deals/home-decor-discounts-refresh-your-space
+        type: projectMapNode
+        nodeId: fdc238e6-2f87-404d-abfa-078d7dc64678
+        projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9
+        dynamicInputValues:
+          deal: home-decor-discounts-refresh-your-space
+          locale: ${locale}
+    brands:
+      type: contentReference
+      value: ${#jptr:/ref-2b26c791-6fd4-4cee-bc0a-1c0bbc8fcac4-brands/entries}
+    displayName:
+      type: text
+      value: 'Home Decor Discounts: Refresh Your Space'
+    responsiveImage:
+      type: asset
+      locales:
+        en:
+          - _id: 76f18ea0-563e-464c-af79-b07770f6e844
+            type: image
+            fields:
+              id:
+                type: text
+                value: b144a643-586d-4831-9ac2-b956e93f55da
+              url:
+                value: >-
+                  https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/Q8mcR7FST8WqsxHg0TtTTg-image.png
+                type: text
+              file:
+                type: file
+                value: 801e3944-6b04-4cfc-96da-d11ae4535d94
+              size:
+                value: 92485
+                type: number
+              title:
+                type: text
+                value: image.png
+              width:
+                value: 225
+                type: number
+              height:
+                value: 225
+                type: number
+              mediaType:
+                value: image/png
+                type: text
+            _source: uniform-assets
+      value: []
+    programmaticPersonalizationAudience:
+      type: text
+      value: americansignal
+    programmaticPersonalizationEnrichmentScore:
+      type: text
+      value: Wayfair
+  _dataResources:
+    ref-2b26c791-6fd4-4cee-bc0a-1c0bbc8fcac4-brands:
+      type: uniformContentInternalReference
+      variables:
+        locale: ${locale}
+        entryIds: >-
+          06b03cc3-d108-4504-a578-825190ea17ff,e9c1195d-8e44-4e3f-9a8f-ad1b560a20c7
+  _locales:
+    - en

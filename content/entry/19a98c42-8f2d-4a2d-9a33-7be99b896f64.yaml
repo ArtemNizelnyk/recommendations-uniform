@@ -1,0 +1,75 @@
+created: '2025-02-26T21:16:58.809194+00:00'
+modified: '2025-02-26T23:20:12.278947+00:00'
+pattern: false
+entry:
+  _id: 19a98c42-8f2d-4a2d-9a33-7be99b896f64
+  _name: Rebajas en Muebles de Interior
+  _slug: rebajas-en-muebles-de-interior
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/A7pDVMZfTiGujiqrUiaNLw-image.png
+  type: deal
+  fields:
+    url:
+      type: link
+      value:
+        path: /${locale}/deals/rebajas-en-muebles-de-interior
+        type: projectMapNode
+        nodeId: fdc238e6-2f87-404d-abfa-078d7dc64678
+        projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9
+        dynamicInputValues:
+          deal: rebajas-en-muebles-de-interior
+          locale: ${locale}
+    brands:
+      type: contentReference
+      value: ${#jptr:/ref-19a98c42-8f2d-4a2d-9a33-7be99b896f64-brands/entries}
+    displayName:
+      type: text
+      value: Rebajas en Muebles de Interior
+    responsiveImage:
+      type: asset
+      locales:
+        en:
+          - _id: 346283da-52d3-4cdc-a2b0-560384d38aa3
+            type: image
+            fields:
+              id:
+                type: text
+                value: efdb17bc-a046-4aa0-bc9c-6078b0af02dd
+              url:
+                value: >-
+                  https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/A7pDVMZfTiGujiqrUiaNLw-image.png
+                type: text
+              file:
+                type: file
+                value: 7fe6ac0c-cd97-4e5e-a251-1432a53de08e
+              size:
+                value: 2081822
+                type: number
+              title:
+                type: text
+                value: image.png
+              width:
+                value: 2000
+                type: number
+              height:
+                value: 1000
+                type: number
+              mediaType:
+                value: image/png
+                type: text
+            _source: uniform-assets
+      value: []
+    programmaticPersonalizationAudience:
+      type: text
+      value: spanishsignal
+    programmaticPersonalizationEnrichmentScore:
+      type: text
+      value: IKEA
+  _dataResources:
+    ref-19a98c42-8f2d-4a2d-9a33-7be99b896f64-brands:
+      type: uniformContentInternalReference
+      variables:
+        locale: ${locale}
+        entryIds: e9c1195d-8e44-4e3f-9a8f-ad1b560a20c7
+  _locales:
+    - en

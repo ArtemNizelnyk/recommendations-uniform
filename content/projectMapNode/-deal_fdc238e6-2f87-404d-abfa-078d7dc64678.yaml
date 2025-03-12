@@ -1,0 +1,10 @@
+id: fdc238e6-2f87-404d-abfa-078d7dc64678
+name: deal
+order: 500
+path: /:locale/deals/:deal
+type: composition
+pathSegment: ':deal'
+data:
+  previewValue: ''
+compositionId: 64ff8ce0-e5ae-4b8b-bd6d-1685ecc227f7
+projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9

@@ -1,0 +1,48 @@
+created: '2025-02-26T21:02:52.915602+00:00'
+modified: '2025-02-26T21:03:18.736174+00:00'
+pattern: false
+entry:
+  _id: 73629b68-7ced-4ad3-8565-07830e081c09
+  _name: Herbalife
+  _slug: herbalife
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/obLs6BLvTzOJhxvyoa-X4g-image.png
+  type: brand
+  fields:
+    brandLogo:
+      type: asset
+      value:
+        - _id: 17bc5ca3-58d6-415d-b036-2c76f1b4187e
+          type: image
+          fields:
+            id:
+              type: text
+              value: 31e8c470-a0ea-4215-b9f7-1056c57c880c
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/obLs6BLvTzOJhxvyoa-X4g-image.png
+              type: text
+            file:
+              type: file
+              value: f7dfb67a-6070-4b38-b0de-02841711c190
+            size:
+              value: 615144
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 3840
+              type: number
+            height:
+              value: 2160
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    displayname:
+      type: text
+      value: Herbalife
+  _locales:
+    - en

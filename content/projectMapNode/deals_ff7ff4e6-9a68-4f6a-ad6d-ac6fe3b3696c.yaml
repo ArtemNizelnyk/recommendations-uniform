@@ -1,0 +1,9 @@
+id: ff7ff4e6-9a68-4f6a-ad6d-ac6fe3b3696c
+name: deals
+order: 500
+path: /:locale/deals
+type: composition
+pathSegment: deals
+data: {}
+compositionId: ec2f2576-38d3-44ec-8f69-fb631f93db13
+projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9

@@ -1,0 +1,48 @@
+created: '2025-02-26T20:59:28.610645+00:00'
+modified: '2025-02-26T20:59:58.254624+00:00'
+pattern: false
+entry:
+  _id: b16e536e-85e5-48b8-965f-bfe607fce861
+  _name: Xiaomi
+  _slug: xiaomi
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/k43LP0B8QLqr7xgC_wCJwA-image.png
+  type: brand
+  fields:
+    brandLogo:
+      type: asset
+      value:
+        - _id: bd8235a5-9fc9-437a-8af2-b1fec605f267
+          type: image
+          fields:
+            id:
+              type: text
+              value: 88b58f73-8526-41cf-957f-26870a93711e
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/k43LP0B8QLqr7xgC_wCJwA-image.png
+              type: text
+            file:
+              type: file
+              value: 02078230-972e-49a7-bb50-2bba7af0be0d
+            size:
+              value: 409732
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 3840
+              type: number
+            height:
+              value: 2160
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    displayname:
+      type: text
+      value: Xiaomi
+  _locales:
+    - en

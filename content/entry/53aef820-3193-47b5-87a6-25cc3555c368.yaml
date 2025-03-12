@@ -1,0 +1,48 @@
+created: '2025-02-26T21:22:07.516442+00:00'
+modified: '2025-02-26T21:22:34.814047+00:00'
+pattern: false
+entry:
+  _id: 53aef820-3193-47b5-87a6-25cc3555c368
+  _name: Whole Foods
+  _slug: whole-foods
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/LKofwA18TPq_qhAFdRglFA-image.png
+  type: brand
+  fields:
+    brandLogo:
+      type: asset
+      value:
+        - _id: 48fe0e03-fdad-4f75-808b-055a515206de
+          type: image
+          fields:
+            id:
+              type: text
+              value: 5e3bd150-66b4-4186-bcb3-bd186cd7108b
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/LKofwA18TPq_qhAFdRglFA-image.png
+              type: text
+            file:
+              type: file
+              value: f11128ed-de40-4f80-b2c3-f0377fdf2ee2
+            size:
+              value: 19837
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 225
+              type: number
+            height:
+              value: 225
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    displayname:
+      type: text
+      value: Whole Foods
+  _locales:
+    - en

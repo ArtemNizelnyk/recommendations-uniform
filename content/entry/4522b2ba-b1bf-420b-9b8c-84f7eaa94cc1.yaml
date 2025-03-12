@@ -1,0 +1,48 @@
+created: '2025-02-26T19:30:12.25788+00:00'
+modified: '2025-02-26T19:31:00.905704+00:00'
+pattern: false
+entry:
+  _id: 4522b2ba-b1bf-420b-9b8c-84f7eaa94cc1
+  _name: Mango
+  _slug: mango
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/angRrQUxQkWTAT4Gxgqd5Q-image.png
+  type: brand
+  fields:
+    brandLogo:
+      type: asset
+      value:
+        - _id: 2d22a70e-90ee-4421-9d38-92c794ed3cfb
+          type: image
+          fields:
+            id:
+              type: text
+              value: d2c2e535-3f7f-4e6b-a3ef-a46ce313b10f
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/angRrQUxQkWTAT4Gxgqd5Q-image.png
+              type: text
+            file:
+              type: file
+              value: d5f41e77-1631-4309-ba4b-af81a8d2a26c
+            size:
+              value: 8759
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 551
+              type: number
+            height:
+              value: 91
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    displayname:
+      type: text
+      value: Mango
+  _locales:
+    - en

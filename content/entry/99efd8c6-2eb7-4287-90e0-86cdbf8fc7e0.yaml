@@ -1,0 +1,76 @@
+created: '2025-02-26T19:33:20.563043+00:00'
+modified: '2025-02-26T23:21:11.179905+00:00'
+pattern: false
+entry:
+  _id: 99efd8c6-2eb7-4287-90e0-86cdbf8fc7e0
+  _name: Spain Deal
+  _slug: spain-deal
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/TLjcIF2IRoWp3bRQsMDHWw-image.png
+  type: deal
+  fields:
+    url:
+      type: link
+      value:
+        path: /${locale}/deals/spain-deal
+        type: projectMapNode
+        nodeId: fdc238e6-2f87-404d-abfa-078d7dc64678
+        projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9
+        dynamicInputValues:
+          deal: spain-deal
+          locale: ${locale}
+    brands:
+      type: contentReference
+      value: ${#jptr:/ref-99efd8c6-2eb7-4287-90e0-86cdbf8fc7e0-brands/entries}
+    displayName:
+      type: text
+      value: Spain Deal
+    responsiveImage:
+      type: asset
+      locales:
+        en:
+          - _id: 3efc9a25-6ee0-4327-b7de-2a70559cdf8a
+            type: image
+            fields:
+              id:
+                type: text
+                value: 308f56e1-e684-448b-989b-6254cc54bfbf
+              url:
+                value: >-
+                  https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/TLjcIF2IRoWp3bRQsMDHWw-image.png
+                type: text
+              file:
+                type: file
+                value: 64379fd6-6e8c-4a04-8980-6f886b19c1db
+              size:
+                value: 289776
+                type: number
+              title:
+                type: text
+                value: image.png
+              width:
+                value: 2560
+                type: number
+              height:
+                value: 1707
+                type: number
+              mediaType:
+                value: image/png
+                type: text
+            _source: uniform-assets
+      value: []
+    programmaticPersonalizationAudience:
+      type: text
+      value: spanishsignal
+    programmaticPersonalizationEnrichmentScore:
+      type: text
+      value: Zara
+  _dataResources:
+    ref-99efd8c6-2eb7-4287-90e0-86cdbf8fc7e0-brands:
+      type: uniformContentInternalReference
+      variables:
+        locale: ${locale}
+        entryIds: >-
+          092985a1-db92-4fbc-8aab-fc278f2a6577,4522b2ba-b1bf-420b-9b8c-84f7eaa94cc1
+  _locales:
+    - en

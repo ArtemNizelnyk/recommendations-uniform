@@ -1,0 +1,48 @@
+created: '2025-02-26T21:03:30.107956+00:00'
+modified: '2025-02-26T21:03:59.595286+00:00'
+pattern: false
+entry:
+  _id: de95132a-6ccd-4496-b7f9-c6248530378b
+  _name: Spotify
+  _slug: spotify
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/M1HVSC0qTB64nhauoHBFew-image.png
+  type: brand
+  fields:
+    brandLogo:
+      type: asset
+      value:
+        - _id: 21c579fe-68c6-45d9-8617-352ecb480465
+          type: image
+          fields:
+            id:
+              type: text
+              value: c9dcd143-5b5e-4d89-b616-d5d248d46145
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/M1HVSC0qTB64nhauoHBFew-image.png
+              type: text
+            file:
+              type: file
+              value: 57c3b928-27a8-4008-babe-f47874927877
+            size:
+              value: 58225
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 1280
+              type: number
+            height:
+              value: 385
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    displayname:
+      type: text
+      value: Spotify
+  _locales:
+    - en

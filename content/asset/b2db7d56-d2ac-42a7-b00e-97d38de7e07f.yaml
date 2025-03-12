@@ -1,0 +1,30 @@
+asset:
+  type: image
+  _id: b2db7d56-d2ac-42a7-b00e-97d38de7e07f
+  _name: ''
+  fields:
+    title:
+      type: text
+      value: image.png
+    file:
+      type: file
+      value: ab3a04c2-c161-4b49-ab76-b728e6b1efc9
+    mediaType:
+      value: image/png
+      type: text
+    url:
+      value: >-
+        https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/T3zJMyJ1QMK3BqT-_DeBlQ-image.png
+      type: text
+    size:
+      value: 18118
+      type: number
+    width:
+      value: 600
+      type: number
+    height:
+      value: 600
+      type: number
+    custom: {}
+created: '2025-02-26T19:31:51.986613+00:00'
+modified: '2025-02-26T19:31:51.986613+00:00'

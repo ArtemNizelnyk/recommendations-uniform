@@ -1,0 +1,75 @@
+created: '2025-02-26T21:15:26.069908+00:00'
+modified: '2025-02-26T23:20:37.120519+00:00'
+pattern: false
+entry:
+  _id: a561eadc-cd91-4b1c-9bed-7fd77e9f945f
+  _name: Descuentos en Productos de Belleza
+  _slug: descuentos-en-productos-de-belleza
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/ifc0rHHJSYq6lnz2af2A5Q-image.png
+  type: deal
+  fields:
+    url:
+      type: link
+      value:
+        path: /${locale}/deals/descuentos-en-productos-de-belleza
+        type: projectMapNode
+        nodeId: fdc238e6-2f87-404d-abfa-078d7dc64678
+        projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9
+        dynamicInputValues:
+          deal: descuentos-en-productos-de-belleza
+          locale: ${locale}
+    brands:
+      type: contentReference
+      value: ${#jptr:/ref-a561eadc-cd91-4b1c-9bed-7fd77e9f945f-brands/entries}
+    displayName:
+      type: text
+      value: Descuentos en Productos de Belleza
+    responsiveImage:
+      type: asset
+      locales:
+        en:
+          - _id: 87d66359-aef4-470d-bb2d-0175c51b5428
+            type: image
+            fields:
+              id:
+                type: text
+                value: a53ea4b2-c267-46fa-9329-eda9c953d88a
+              url:
+                value: >-
+                  https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/ifc0rHHJSYq6lnz2af2A5Q-image.png
+                type: text
+              file:
+                type: file
+                value: a99250d9-b6b0-4897-9ca3-dc8a11c451bc
+              size:
+                value: 265427
+                type: number
+              title:
+                type: text
+                value: image.png
+              width:
+                value: 626
+                type: number
+              height:
+                value: 417
+                type: number
+              mediaType:
+                value: image/png
+                type: text
+            _source: uniform-assets
+      value: []
+    programmaticPersonalizationAudience:
+      type: text
+      value: spanishsignal
+    programmaticPersonalizationEnrichmentScore:
+      type: text
+      value: L'Oreal
+  _dataResources:
+    ref-a561eadc-cd91-4b1c-9bed-7fd77e9f945f-brands:
+      type: uniformContentInternalReference
+      variables:
+        locale: ${locale}
+        entryIds: 127a1b23-25b1-45d1-8218-6a16d02d3a4f
+  _locales:
+    - en

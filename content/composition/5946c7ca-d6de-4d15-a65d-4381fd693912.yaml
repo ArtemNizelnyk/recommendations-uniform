@@ -1,0 +1,11 @@
+composition:
+  _name: test
+  _id: 5946c7ca-d6de-4d15-a65d-4381fd693912
+  _slug: test
+  type: page
+  parameters: {}
+  _locales:
+    - en
+created: '2025-02-26T12:01:52.831054+00:00'
+modified: '2025-02-26T12:01:52.831054+00:00'
+pattern: false

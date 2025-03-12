@@ -1,0 +1,76 @@
+created: '2025-02-26T21:23:52.123251+00:00'
+modified: '2025-02-26T23:19:38.735004+00:00'
+pattern: false
+entry:
+  _id: d7dce254-3422-4200-a5d8-6b7d1018c7e1
+  _name: 'Apparel Flash Sale: Limited Time Offers'
+  _slug: apparel-flash-sale-limited-time-offers
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/AzKB8O17Q_Wu4v2wiEzmvw-image.png
+  type: deal
+  fields:
+    url:
+      type: link
+      value:
+        path: /${locale}/deals/apparel-flash-sale-limited-time-offers
+        type: projectMapNode
+        nodeId: fdc238e6-2f87-404d-abfa-078d7dc64678
+        projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9
+        dynamicInputValues:
+          deal: apparel-flash-sale-limited-time-offers
+          locale: ${locale}
+    brands:
+      type: contentReference
+      value: ${#jptr:/ref-d7dce254-3422-4200-a5d8-6b7d1018c7e1-brands/entries}
+    displayName:
+      type: text
+      value: 'Apparel Flash Sale: Limited Time Offers'
+    responsiveImage:
+      type: asset
+      locales:
+        en:
+          - _id: 393410f8-485c-4d50-89f3-df17f6f1601b
+            type: image
+            fields:
+              id:
+                type: text
+                value: 16805d8d-02b5-4746-b8d3-debb165c48eb
+              url:
+                value: >-
+                  https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/AzKB8O17Q_Wu4v2wiEzmvw-image.png
+                type: text
+              file:
+                type: file
+                value: aaf429f0-4cb0-4512-8350-033b27bac3d0
+              size:
+                value: 91322
+                type: number
+              title:
+                type: text
+                value: image.png
+              width:
+                value: 455
+                type: number
+              height:
+                value: 280
+                type: number
+              mediaType:
+                value: image/png
+                type: text
+            _source: uniform-assets
+      value: []
+    programmaticPersonalizationAudience:
+      type: text
+      value: americansignal
+    programmaticPersonalizationEnrichmentScore:
+      type: text
+      value: GAP
+  _dataResources:
+    ref-d7dce254-3422-4200-a5d8-6b7d1018c7e1-brands:
+      type: uniformContentInternalReference
+      variables:
+        locale: ${locale}
+        entryIds: >-
+          2bd4a0be-a905-4bd8-9038-ee80cb035d86,6a8ca31b-9382-4736-be31-d875d7d74791
+  _locales:
+    - en

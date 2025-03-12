@@ -1,0 +1,48 @@
+created: '2025-02-26T21:00:23.92277+00:00'
+modified: '2025-02-26T21:00:55.426959+00:00'
+pattern: false
+entry:
+  _id: 127a1b23-25b1-45d1-8218-6a16d02d3a4f
+  _name: L'Oreal
+  _slug: loreal
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/6JTjKrQyQQ6BGz9iO6Ft2A-image.png
+  type: brand
+  fields:
+    brandLogo:
+      type: asset
+      value:
+        - _id: 9a2324ce-db34-4c90-b728-44e8833509c9
+          type: image
+          fields:
+            id:
+              type: text
+              value: c1eab91b-8c7e-4a49-a896-26af145df968
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/6JTjKrQyQQ6BGz9iO6Ft2A-image.png
+              type: text
+            file:
+              type: file
+              value: 85e27f05-2f5c-4f17-b6ba-e0121c86896f
+            size:
+              value: 17775
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 800
+              type: number
+            height:
+              value: 600
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    displayname:
+      type: text
+      value: L'Oreal
+  _locales:
+    - en

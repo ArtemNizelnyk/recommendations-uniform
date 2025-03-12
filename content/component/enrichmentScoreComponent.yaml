@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=<https://uniform.app/schemas/json-schema/component-definition/v1.json>
+$schema: https://uniform.app/schemas/json-schema/component-definition/v1.json
+id: enrichmentScoreComponent
+name: Enrichment Score Component
+icon: screen
+parameters:
+  - id: enrichmentCategory
+    name: Enrichment Category
+    type: text
+    typeConfig:
+      required: true
+  - id: enrichmentValue
+    name: Enrichment Value
+    type: text
+    typeConfig:
+      required: true
+useTeamPermissions: true
+slots: []
+titleParameter: enrichmentCategory
+canBeComposition: false
+created: '2025-02-26T21:59:48.673498+00:00'
+updated: '2025-02-26T21:59:48.673498+00:00'

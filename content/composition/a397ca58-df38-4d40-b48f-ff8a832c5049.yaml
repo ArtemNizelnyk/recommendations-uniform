@@ -1,0 +1,11 @@
+composition:
+  _name: Home
+  _id: a397ca58-df38-4d40-b48f-ff8a832c5049
+  _slug: ':locale'
+  type: page
+  parameters: {}
+  _locales:
+    - en
+created: '2025-02-26T23:48:40.009176+00:00'
+modified: '2025-02-26T23:48:40.009176+00:00'
+pattern: false

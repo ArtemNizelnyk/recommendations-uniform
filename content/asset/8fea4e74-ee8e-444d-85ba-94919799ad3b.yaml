@@ -1,0 +1,30 @@
+asset:
+  type: image
+  _id: 8fea4e74-ee8e-444d-85ba-94919799ad3b
+  _name: ''
+  fields:
+    title:
+      type: text
+      value: image.png
+    file:
+      type: file
+      value: 7b8d42cd-8d98-4c2f-9771-ac8d6efcdeba
+    mediaType:
+      value: image/png
+      type: text
+    url:
+      value: >-
+        https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/aePZ005FRHOg-1JR1SgVbQ-image.png
+      type: text
+    size:
+      value: 140131
+      type: number
+    width:
+      value: 1920
+      type: number
+    height:
+      value: 1080
+      type: number
+    custom: {}
+created: '2025-02-26T21:19:53.754684+00:00'
+modified: '2025-02-26T21:19:53.754684+00:00'

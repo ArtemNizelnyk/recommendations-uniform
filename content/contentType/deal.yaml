@@ -1,0 +1,69 @@
+id: deal
+name: Deal
+created: '2025-02-26T19:29:33.46397+00:00'
+updated: '2025-02-26T23:04:04.215156+00:00'
+slugSettings: {}
+useTeamPermissions: true
+fields:
+  - id: displayName
+    name: Display Name
+    type: text
+    typeConfig:
+      required: true
+  - id: 4455f1f7-f23d-4476-a8db-d3a94cf00919
+    name: Personalization
+    type: group
+    typeConfig:
+      collapsed: true
+      childrenParams:
+        - brands
+        - programmaticPersonalizationAudience
+        - programmaticPersonalizationEnrichment
+        - programmaticPersonalizationEnrichmentScore
+  - id: brands
+    name: Brands
+    type: contentReference
+    typeConfig:
+      isMulti: true
+      allowedContentTypes:
+        - brand
+  - id: programmaticPersonalizationAudience
+    name: Programmatic Personalization Audience
+    type: text
+    typeConfig: null
+  - id: programmaticPersonalizationEnrichment
+    name: Programmatic Personalization Enrichment
+    type: multi-select
+    typeConfig:
+      options:
+        - text: Apple
+          value: Apple
+        - text: Mango
+          value: Mango
+        - text: Whole Foods
+          value: Whole Foods
+  - id: programmaticPersonalizationEnrichmentScore
+    name: Programmatic Personalization Enrichment Score
+    type: text
+    typeConfig: null
+  - id: responsiveImage
+    name: Responsive Image
+    type: asset
+    typeConfig:
+      allowedTypes:
+        - image
+    localizable: true
+  - id: url
+    name: url
+    type: link
+    typeConfig:
+      required: true
+      linkTypes:
+        tel: false
+        url: false
+        email: false
+entryName: displayName
+thumbnailField: responsiveImage
+icon: file-document
+type: contentType
+permissions: []

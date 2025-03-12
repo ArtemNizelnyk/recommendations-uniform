@@ -1,0 +1,29 @@
+id: dealByName
+displayName: Deal By Name
+ttl: 30
+path: /query
+custom:
+  proposedName: Query Deal
+  allowedContentTypes:
+    - deal
+method: GET
+purgeKey: 318ec42b-be12-40e8-b651-1f00f50a4545
+archetype: queryEntries
+variables:
+  limit:
+    type: text
+    default: '20'
+  offset:
+    type: text
+    default: '0'
+  filters:
+    type: text
+    default: '{}'
+  orderBy:
+    type: text
+    default: ''
+  contentTypes:
+    type: text
+    default: ''
+dataSourceId: uniformContent
+allowedOnComponents: []

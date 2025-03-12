@@ -1,0 +1,48 @@
+created: '2025-02-26T21:01:58.457465+00:00'
+modified: '2025-02-26T21:02:13.40136+00:00'
+pattern: false
+entry:
+  _id: da058d72-222d-47fd-b280-e206658b136f
+  _name: Philips
+  _slug: philips
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/URwCLiYHTYmPiwne6Onn-g-image.png
+  type: brand
+  fields:
+    brandLogo:
+      type: asset
+      value:
+        - _id: 03312314-4f4a-4170-9990-8a87a1226c43
+          type: image
+          fields:
+            id:
+              type: text
+              value: 3eb707e6-2644-49c2-9e18-553bdf32a0a2
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/URwCLiYHTYmPiwne6Onn-g-image.png
+              type: text
+            file:
+              type: file
+              value: ca17ee06-9951-414d-8e9b-5df9b0ab5bda
+            size:
+              value: 111417
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 1500
+              type: number
+            height:
+              value: 900
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    displayname:
+      type: text
+      value: Philips
+  _locales:
+    - en

@@ -1,0 +1,48 @@
+created: '2025-02-26T21:20:11.55222+00:00'
+modified: '2025-02-26T21:20:37.168005+00:00'
+pattern: false
+entry:
+  _id: 2bd4a0be-a905-4bd8-9038-ee80cb035d86
+  _name: GAP
+  _slug: gap
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/1KeZLRxbTK2TZf4Z_bLwlg-image.png
+  type: brand
+  fields:
+    brandLogo:
+      type: asset
+      value:
+        - _id: 31798f82-3cd2-41cc-a0ce-6a6e440201af
+          type: image
+          fields:
+            id:
+              type: text
+              value: a8b227b9-c40d-417e-bc10-8a943ca8be66
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/1KeZLRxbTK2TZf4Z_bLwlg-image.png
+              type: text
+            file:
+              type: file
+              value: 99cbca54-b424-44da-907c-e18c681ee272
+            size:
+              value: 53743
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 1200
+              type: number
+            height:
+              value: 918
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    displayname:
+      type: text
+      value: GAP
+  _locales:
+    - en

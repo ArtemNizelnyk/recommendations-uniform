@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=<https://uniform.app/schemas/json-schema/component-definition/v1.json>
+$schema: https://uniform.app/schemas/json-schema/component-definition/v1.json
+id: recommendationsComponent
+name: Recommendations Component
+icon: shopping-cart
+parameters: []
+categoryId: 312f26cf-9ce8-478a-a5f1-02a0c45592a5
+useTeamPermissions: true
+slots: []
+canBeComposition: false
+created: '2025-02-26T20:18:14.405743+00:00'
+updated: '2025-02-26T20:18:14.405743+00:00'

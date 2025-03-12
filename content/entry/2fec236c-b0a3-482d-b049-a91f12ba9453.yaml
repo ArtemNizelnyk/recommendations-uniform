@@ -1,0 +1,75 @@
+created: '2025-02-26T21:26:55.297975+00:00'
+modified: '2025-02-26T23:19:09.016698+00:00'
+pattern: false
+entry:
+  _id: 2fec236c-b0a3-482d-b049-a91f12ba9453
+  _name: 'Fitness Frenzy: Gear Up and Save'
+  _slug: fitness-frenzy-gear-up-and-save
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/2OB9tI4OQie1a1tk9ArNBA-image.png
+  type: deal
+  fields:
+    url:
+      type: link
+      value:
+        path: /${locale}/deals/fitness-frenzy-gear-up-and-save
+        type: projectMapNode
+        nodeId: fdc238e6-2f87-404d-abfa-078d7dc64678
+        projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9
+        dynamicInputValues:
+          deal: fitness-frenzy-gear-up-and-save
+          locale: ${locale}
+    brands:
+      type: contentReference
+      value: ${#jptr:/ref-2fec236c-b0a3-482d-b049-a91f12ba9453-brands/entries}
+    displayName:
+      type: text
+      value: 'Fitness Frenzy: Gear Up and Save'
+    responsiveImage:
+      type: asset
+      locales:
+        en:
+          - _id: 1083c9a6-8e0c-43ae-9170-58303d5c57e4
+            type: image
+            fields:
+              id:
+                type: text
+                value: 85f9c557-9a85-455f-8416-fcdc8bbdb913
+              url:
+                value: >-
+                  https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/2OB9tI4OQie1a1tk9ArNBA-image.png
+                type: text
+              file:
+                type: file
+                value: 03b862e1-e3c7-4e23-b0ec-0d87417f8249
+              size:
+                value: 82863
+                type: number
+              title:
+                type: text
+                value: image.png
+              width:
+                value: 225
+                type: number
+              height:
+                value: 225
+                type: number
+              mediaType:
+                value: image/png
+                type: text
+            _source: uniform-assets
+      value: []
+    programmaticPersonalizationAudience:
+      type: text
+      value: americansignal
+    programmaticPersonalizationEnrichmentScore:
+      type: text
+      value: Bowflex
+  _dataResources:
+    ref-2fec236c-b0a3-482d-b049-a91f12ba9453-brands:
+      type: uniformContentInternalReference
+      variables:
+        locale: ${locale}
+        entryIds: ab57d7f9-2284-4dd0-ba4b-f200579b9117
+  _locales:
+    - en

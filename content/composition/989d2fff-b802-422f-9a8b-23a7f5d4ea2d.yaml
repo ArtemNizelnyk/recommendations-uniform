@@ -1,0 +1,80 @@
+composition:
+  _name: brand
+  _id: 989d2fff-b802-422f-9a8b-23a7f5d4ea2d
+  _slug: ':brand'
+  type: page
+  parameters:
+    pageTitle:
+      type: text
+      locales:
+        en: ${#jptr:/Brand by Name Content/entries/0/entry/_name}
+  slots:
+    pageHeader:
+      - _id: 0d93a93d-f312-48db-bca0-584550d13354
+        type: header
+        _pattern: 021762f3-8a06-41b4-a4fb-08a837c74415
+    pageContent:
+      - _id: c0761da4-bbf4-4233-956f-1cd8d1860f8e
+        type: container
+        slots:
+          containerContent:
+            - _id: 4b603c0a-137f-4c73-846f-4380da0f9104
+              type: fixedHero
+              variant: columnsReverse
+              parameters:
+                image:
+                  type: asset
+                  value: >-
+                    ${#jptr:/Brand by Name
+                    Content/entries/0/entry/fields/brandLogo/value}
+                titleTag:
+                  type: dex-segmented-control-parameter
+                  value: h2
+                titleText:
+                  type: text
+                  locales:
+                    en: >-
+                      ${#jptr:/Brand by Name
+                      Content/entries/0/entry/fields/displayname/value}
+                displayName:
+                  type: text
+                  locales:
+                    en: Brand
+        parameters:
+          displayName:
+            type: text
+            locales:
+              en: Content
+      - _id: 00b7287b-7ed4-4b64-b035-e455968924f1
+        type: container
+        slots:
+          containerContent:
+            - _id: 0c569f1a-1f9d-4a0f-b63a-a1e22b162ebe
+              type: enrichmentScoreComponent
+              parameters:
+                enrichmentValue:
+                  type: text
+                  value: >-
+                    ${#jptr:/Brand by Name
+                    Content/entries/0/entry/fields/displayname/value}
+                enrichmentCategory:
+                  type: text
+                  value: ${#jptr:/Brand by Name Content/entries/0/entry/type}
+        parameters:
+          displayName:
+            type: text
+            locales:
+              en: Scoring&Boosting
+  _dataResources:
+    Brand by Name Content:
+      type: brandByName
+      variables:
+        locale: ${locale}
+        search: ${brand}
+        filters: '{"type[eq]":"brand"}'
+        contentTypes: brand
+  _locales:
+    - en
+created: '2025-02-26T19:54:13.458119+00:00'
+modified: '2025-02-26T22:02:48.493083+00:00'
+pattern: false

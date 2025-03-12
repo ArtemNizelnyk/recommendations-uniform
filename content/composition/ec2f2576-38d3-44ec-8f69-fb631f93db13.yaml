@@ -1,0 +1,88 @@
+composition:
+  _name: deals
+  _id: ec2f2576-38d3-44ec-8f69-fb631f93db13
+  _slug: deals
+  type: page
+  parameters:
+    pageTitle:
+      type: text
+      locales:
+        en: Deals
+  slots:
+    pageHeader:
+      - _id: 95856030-92ef-4a5f-bf06-bb86f3d0685d
+        type: header
+        _pattern: 021762f3-8a06-41b4-a4fb-08a837c74415
+    pageContent:
+      - _id: a3cfbcd1-5d2d-495a-b7d5-aae52c9c31e6
+        type: container
+        slots:
+          containerContent:
+            - _id: 15ea891b-4a60-490a-8a9a-6289af826727
+              type: $loop
+              slots:
+                body:
+                  - _id: a54e4353-6f7f-442d-b28e-2f3b076a7fb9
+                    type: card
+                    slots:
+                      cardMedia:
+                        - _id: 94c3130e-1be9-48dd-858d-892b0f6127c2
+                          type: image
+                          parameters:
+                            image:
+                              type: asset
+                              value: >-
+                                ${#jptr:/Deal List Content entries Loop
+                                Item/entry/fields/responsiveImage/value}
+                      cardContent:
+                        - _id: 4bf45ac7-681a-4fb2-b797-b0e2dbb9c33b
+                          type: text
+                          parameters:
+                            tag:
+                              type: dex-segmented-control-parameter
+                              value: span
+                            text:
+                              type: text
+                              locales:
+                                en: >-
+                                  ${#jptr:/Deal List Content entries Loop
+                                  Item/entry/fields/displayName/value}
+                        - _id: 1f2337be-a45e-4bff-9719-ff2de179f174
+                          type: link
+                          parameters:
+                            link:
+                              type: link
+                              value:
+                                path: >-
+                                  /${locale}/deals/${#jptr:/Deal List Content
+                                  entries Loop Item/entry/_slug}
+                                type: projectMapNode
+                                nodeId: fdc238e6-2f87-404d-abfa-078d7dc64678
+                                projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9
+                                dynamicInputValues:
+                                  deal: >-
+                                    ${#jptr:/Deal List Content entries Loop
+                                    Item/entry/_slug}
+                                  locale: ${locale}
+                            displayName:
+                              type: text
+                              locales:
+                                en: Deal
+              _dataResources:
+                Deal List Content entries Loop Item:
+                  type: sys-reserved-loop
+                  variables:
+                    connectedData: '#jptr:/Deal List Content/entries:fa=c'
+  _dataResources:
+    Deal List Content:
+      type: dealList
+      variables:
+        locale: ${locale}
+        search: ''
+        filters: '{"type[eq]":"deal"}'
+        contentTypes: deal
+  _locales:
+    - en
+created: '2025-02-26T23:57:47.892744+00:00'
+modified: '2025-02-27T00:05:38.195287+00:00'
+pattern: false

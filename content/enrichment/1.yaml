@@ -1,0 +1,34 @@
+id: 'brand'
+name: Brand
+cap: 100
+values:
+  - id: '1'
+    value: Apple
+  - id: '3'
+    value: Bowflex
+  - id: '5'
+    value: GAP
+  - id: '7'
+    value: Herbalife
+  - id: '9'
+    value: IKEA
+  - id: '10'
+    value: L'Oreal
+  - id: '15'
+    value: Mango
+  - id: '8'
+    value: Philips
+  - id: '12'
+    value: Samsung
+  - id: '6'
+    value: Spotify
+  - id: '14'
+    value: Tommy Hilfiger
+  - id: '4'
+    value: Wayfair
+  - id: '2'
+    value: Whole Foods
+  - id: '11'
+    value: Xiaomi
+  - id: '13'
+    value: Zara

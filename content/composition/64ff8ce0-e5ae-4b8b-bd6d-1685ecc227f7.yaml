@@ -1,0 +1,121 @@
+composition:
+  _name: deal
+  _id: 64ff8ce0-e5ae-4b8b-bd6d-1685ecc227f7
+  _slug: ':deal'
+  type: page
+  parameters:
+    pageTitle:
+      type: text
+      locales:
+        en: >-
+          ${#jptr:/Deal By Name
+          Content/entries/0/entry/fields/displayName/value}
+  slots:
+    pageHeader:
+      - _id: d27e2304-1ee6-40d3-82fb-2749852da6d5
+        type: header
+        _pattern: 021762f3-8a06-41b4-a4fb-08a837c74415
+    pageContent:
+      - _id: 1cbe1ed5-9e43-4c56-bc1b-2dad3d23fa55
+        type: container
+        slots:
+          containerContent:
+            - _id: 83ad86c2-29a4-4c50-b259-7134513f4535
+              type: fixedHero
+              variant: columns
+              parameters:
+                image:
+                  type: asset
+                  value: >-
+                    ${#jptr:/Deal By Name
+                    Content/entries/0/entry/fields/responsiveImage/value}
+                titleText:
+                  type: text
+                  locales:
+                    en: >-
+                      ${#jptr:/Deal By Name
+                      Content/entries/0/entry/fields/displayName/value}
+                displayName:
+                  type: text
+                  locales:
+                    en: >-
+                      ${#jptr:/Deal By Name
+                      Content/entries/0/entry/fields/displayName/value}
+            - _id: e57a7ab4-0974-4d97-a577-cc74c5e8be2b
+              type: text
+              parameters:
+                tag:
+                  type: dex-segmented-control-parameter
+                  value: h1
+                text:
+                  type: text
+                  locales:
+                    en: 'Brands:'
+            - _id: 90694138-b256-49d6-9303-a60ba371a348
+              type: carousel
+              slots:
+                carouselItems:
+                  - _id: b5df4a2e-f6f6-4535-8145-38f9c425fb59
+                    type: $loop
+                    slots:
+                      body:
+                        - _id: 0a15d77e-ddd8-49e8-bf9f-ee3302cd9c34
+                          type: card
+                          slots:
+                            cardMedia:
+                              - _id: 066478da-1f73-4c11-ad56-0fcc367a259f
+                                type: image
+                                parameters:
+                                  image:
+                                    type: asset
+                                    value: >-
+                                      ${#jptr:/Deal By Name Content value Loop
+                                      Item/entry/fields/brandLogo/value}
+                                  width:
+                                    type: number
+                                    value: '100'
+                                  height:
+                                    type: number
+                                    value: '100'
+                            cardContent:
+                              - _id: 7a43979d-7fb8-408f-a683-7bd353089ac7
+                                type: text
+                                parameters:
+                                  text:
+                                    type: text
+                                    locales:
+                                      en: >-
+                                        ${#jptr:/Deal By Name Content value Loop
+                                        Item/entry/fields/displayname/value}
+                          parameters:
+                            displayName:
+                              type: text
+                              locales:
+                                en: >-
+                                  ${#jptr:/Deal By Name Content value Loop
+                                  Item/entry/_name}
+                    _dataResources:
+                      Deal By Name Content value Loop Item:
+                        type: sys-reserved-loop
+                        variables:
+                          connectedData: >-
+                            #jptr:/Deal By Name
+                            Content/entries/0/entry/fields/brands/value:fa=c
+              parameters:
+                displayName:
+                  type: text
+                  locales:
+                    en: Brands
+  _dataResources:
+    Deal By Name Content:
+      type: dealByName
+      variables:
+        locale: ${locale}
+        search: ${deal}
+        filters: '{"type[eq]":"deal"}'
+        contentTypes: deal
+  _locales:
+    - en
+created: '2025-02-26T19:54:27.304045+00:00'
+modified: '2025-02-26T21:42:56.145665+00:00'
+pattern: false

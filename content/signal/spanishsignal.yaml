@@ -1,0 +1,16 @@
+id: spanishsignal
+name: SpanishSignal
+cap: 100
+crit:
+  op: '&'
+  type: G
+  clauses:
+    - type: QS
+      match:
+        cs: false
+        op: '='
+        rhs: spain
+      queryName: country
+dur: t
+description: ''
+str: 50

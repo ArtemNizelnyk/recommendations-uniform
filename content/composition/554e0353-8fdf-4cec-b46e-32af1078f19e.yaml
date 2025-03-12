@@ -1,0 +1,165 @@
+composition:
+  _name: brands
+  _id: 554e0353-8fdf-4cec-b46e-32af1078f19e
+  _slug: brands
+  type: page
+  parameters:
+    pageTitle:
+      type: text
+      locales:
+        en: Brands
+  slots:
+    pageHeader:
+      - _id: 74b8f111-d0ec-4b92-8544-6e1ba1c55cda
+        type: header
+        _pattern: 021762f3-8a06-41b4-a4fb-08a837c74415
+    pageContent:
+      - _id: 62d6818f-4716-40ae-b014-9ff90f2adec4
+        type: container
+        slots:
+          containerContent:
+            - _id: e3021ad6-5702-4452-9b15-23a4d27d570d
+              type: divider
+              parameters:
+                width:
+                  type: dex-slider-control-parameter
+                  value: 100%
+                alignment:
+                  type: dex-segmented-control-parameter
+                  value: center
+                thickness:
+                  type: dex-slider-control-parameter
+                  value: 1px
+            - _id: 58c3316d-c18d-43c0-a3d4-bf2c6e2f737e
+              type: flex
+              slots:
+                flexItem:
+                  - _id: dd1047b6-e76c-4520-a6be-b3e23a60e295
+                    type: $loop
+                    slots:
+                      body:
+                        - _id: e6475759-0ee6-4d35-adcd-a4ea1fce5775
+                          type: card
+                          slots:
+                            cardMedia:
+                              - _id: 61ac48bc-15fa-47e0-b682-90b242af406c
+                                type: image
+                                parameters:
+                                  image:
+                                    type: asset
+                                    value: >-
+                                      ${#jptr:/Brand List Content entries Loop
+                                      Item/entry/fields/brandLogo/value}
+                                  width:
+                                    type: number
+                                    value: '99'
+                                  height:
+                                    type: number
+                                    value: '100'
+                                  objectFit:
+                                    type: dex-segmented-control-parameter
+                                    value: contain
+                            cardContent:
+                              - _id: 3713d299-20e1-4eb5-8031-62bfc0526dc0
+                                type: link
+                                slots:
+                                  linkContent:
+                                    - _id: ca38de93-129c-4aad-b922-a1c0212dc994
+                                      type: text
+                                      parameters:
+                                        tag:
+                                          type: dex-segmented-control-parameter
+                                          value: h2
+                                        size:
+                                          type: dex-segmented-control-parameter
+                                          value: {}
+                                        text:
+                                          type: text
+                                          locales:
+                                            en: >-
+                                              ${#jptr:/Brand List Content entries Loop
+                                              Item/entry/fields/displayname/value}
+                                        color:
+                                          type: dex-color-palette-parameter
+                                          value: text-primary
+                                        weight:
+                                          type: dex-segmented-control-parameter
+                                          value: normal
+                                        alignment:
+                                          type: dex-segmented-control-parameter
+                                          value: center
+                                        decoration:
+                                          type: dex-segmented-control-parameter
+                                          value: ''
+                                parameters:
+                                  link:
+                                    type: link
+                                    value:
+                                      path: >-
+                                        /${locale}/brands/${#jptr:/Brand List
+                                        Content entries Loop Item/entry/_slug}
+                                      type: projectMapNode
+                                      nodeId: 5628f289-863d-4269-a204-e5f182532bfc
+                                      projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9
+                                      dynamicInputValues:
+                                        brand: >-
+                                          ${#jptr:/Brand List Content entries Loop
+                                          Item/entry/_slug}
+                                        locale: ${locale}
+                                  displayName:
+                                    type: text
+                                    locales:
+                                      en: >-
+                                        ${#jptr:/Brand List Content entries Loop
+                                        Item/entry/_name}
+                          parameters:
+                            border:
+                              type: dex-token-selector-parameter
+                              value: border-primary
+                            backgroundColor:
+                              type: dex-color-palette-parameter
+                              value: general-color-1
+                    _dataResources:
+                      Brand List Content entries Loop Item:
+                        type: sys-reserved-loop
+                        variables:
+                          connectedData: '#jptr:/Brand List Content/entries:fa=c'
+              parameters:
+                gap:
+                  type: dex-slider-control-parameter
+                  value:
+                    desktop: '4'
+                direction:
+                  type: dex-segmented-control-parameter
+                  value:
+                    mobile: row
+                    tablet: row
+                    desktop: row
+                alignItems:
+                  type: dex-segmented-control-parameter
+                  value: {}
+                fluidContent:
+                  type: checkbox
+                  value: true
+                justifyContent:
+                  type: dex-segmented-control-parameter
+                  value:
+                    desktop: start
+        parameters:
+          displayName:
+            type: text
+            locales:
+              en: brands
+  _dataResources:
+    Brand List Content:
+      type: brandList
+      variables:
+        locale: ${locale}
+        search: ''
+        filters: '{"type[eq]":"brand"}'
+        contentTypes: brand
+  _locales:
+    - en
+created: '2025-02-26T23:57:39.141633+00:00'
+modified: '2025-02-27T00:19:07.553098+00:00'
+pattern: false

@@ -1,0 +1,76 @@
+created: '2025-02-26T21:04:12.581975+00:00'
+modified: '2025-02-26T23:20:58.902942+00:00'
+pattern: false
+entry:
+  _id: e4fe97c7-0775-4a2a-9977-26c794b3d9c8
+  _name: Semana Española de Descuentos en Electrónica
+  _slug: semana-espanola-de-descuentos-en-electronica
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/wb7q_3kmQxe3VhFZecFrbA-image.png
+  type: deal
+  fields:
+    url:
+      type: link
+      value:
+        path: /${locale}/deals/semana-espanola-de-descuentos-en-electronica
+        type: projectMapNode
+        nodeId: fdc238e6-2f87-404d-abfa-078d7dc64678
+        projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9
+        dynamicInputValues:
+          deal: semana-espanola-de-descuentos-en-electronica
+          locale: ${locale}
+    brands:
+      type: contentReference
+      value: ${#jptr:/ref-e4fe97c7-0775-4a2a-9977-26c794b3d9c8-brands/entries}
+    displayName:
+      type: text
+      value: Semana Española de Descuentos en Electrónica
+    responsiveImage:
+      type: asset
+      locales:
+        en:
+          - _id: d1c7ff53-0c79-4fae-b8a8-98b92d2a85d4
+            type: image
+            fields:
+              id:
+                type: text
+                value: f59ce976-9604-4434-ba75-5fbc88121f0d
+              url:
+                value: >-
+                  https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/wb7q_3kmQxe3VhFZecFrbA-image.png
+                type: text
+              file:
+                type: file
+                value: 00687f16-196c-4c97-a6f6-514c57b74de1
+              size:
+                value: 477318
+                type: number
+              title:
+                type: text
+                value: image.png
+              width:
+                value: 1960
+                type: number
+              height:
+                value: 1100
+                type: number
+              mediaType:
+                value: image/png
+                type: text
+            _source: uniform-assets
+      value: []
+    programmaticPersonalizationAudience:
+      type: text
+      value: spanishsignal
+    programmaticPersonalizationEnrichmentScore:
+      type: text
+      value: Samsung
+  _dataResources:
+    ref-e4fe97c7-0775-4a2a-9977-26c794b3d9c8-brands:
+      type: uniformContentInternalReference
+      variables:
+        locale: ${locale}
+        entryIds: >-
+          8ff63c25-41b2-422f-b673-44b01946f02e,b16e536e-85e5-48b8-965f-bfe607fce861
+  _locales:
+    - en

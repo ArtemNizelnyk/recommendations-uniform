@@ -1,0 +1,48 @@
+created: '2025-02-26T21:21:28.760039+00:00'
+modified: '2025-02-26T21:21:59.00032+00:00'
+pattern: false
+entry:
+  _id: ab57d7f9-2284-4dd0-ba4b-f200579b9117
+  _name: Bowflex
+  _slug: bowflex
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/Z43w3ZVkTXKNOgm-n7Cjdg-image.png
+  type: brand
+  fields:
+    brandLogo:
+      type: asset
+      value:
+        - _id: 4d2fe4dd-961d-4edb-98c3-68c600bdf5c6
+          type: image
+          fields:
+            id:
+              type: text
+              value: 2cf52f85-7464-49a3-99ca-74126375aebe
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/Z43w3ZVkTXKNOgm-n7Cjdg-image.png
+              type: text
+            file:
+              type: file
+              value: e4f6ef7c-12a4-4480-b304-5cc72870eb3b
+            size:
+              value: 76082
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 1490
+              type: number
+            height:
+              value: 488
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    displayname:
+      type: text
+      value: Bowflex
+  _locales:
+    - en

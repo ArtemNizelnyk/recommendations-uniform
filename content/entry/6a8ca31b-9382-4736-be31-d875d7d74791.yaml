@@ -1,0 +1,48 @@
+created: '2025-02-26T19:31:15.42625+00:00'
+modified: '2025-02-26T19:32:15.314463+00:00'
+pattern: false
+entry:
+  _id: 6a8ca31b-9382-4736-be31-d875d7d74791
+  _name: Tommy Hilfiger
+  _slug: tommy-hilfiger
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/T3zJMyJ1QMK3BqT-_DeBlQ-image.png
+  type: brand
+  fields:
+    brandLogo:
+      type: asset
+      value:
+        - _id: eeca7cb2-a7e8-4d4e-9f81-fe38dd421164
+          type: image
+          fields:
+            id:
+              type: text
+              value: b2db7d56-d2ac-42a7-b00e-97d38de7e07f
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/T3zJMyJ1QMK3BqT-_DeBlQ-image.png
+              type: text
+            file:
+              type: file
+              value: ab3a04c2-c161-4b49-ab76-b728e6b1efc9
+            size:
+              value: 18118
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 600
+              type: number
+            height:
+              value: 600
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    displayname:
+      type: text
+      value: Tommy Hilfiger
+  _locales:
+    - en

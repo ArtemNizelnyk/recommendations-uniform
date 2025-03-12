@@ -1,0 +1,48 @@
+created: '2025-02-26T20:58:48.956395+00:00'
+modified: '2025-02-26T20:59:18.348454+00:00'
+pattern: false
+entry:
+  _id: 8ff63c25-41b2-422f-b673-44b01946f02e
+  _name: Samsung
+  _slug: samsung
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/yjW5K1GQQB2TV5wlHcD1zw-image.png
+  type: brand
+  fields:
+    brandLogo:
+      type: asset
+      value:
+        - _id: cb33184e-fd8b-4762-989a-fe6b2bb17128
+          type: image
+          fields:
+            id:
+              type: text
+              value: 0f67d471-aaf9-4ff3-b35f-6419b477a309
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/yjW5K1GQQB2TV5wlHcD1zw-image.png
+              type: text
+            file:
+              type: file
+              value: 41b9d730-e103-4c5b-8895-2f10739cea02
+            size:
+              value: 17186
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 512
+              type: number
+            height:
+              value: 288
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    displayname:
+      type: text
+      value: Samsung
+  _locales:
+    - en

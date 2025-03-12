@@ -1,0 +1,48 @@
+created: '2025-02-26T19:32:29.170641+00:00'
+modified: '2025-02-26T19:32:57.686426+00:00'
+pattern: false
+entry:
+  _id: 092985a1-db92-4fbc-8aab-fc278f2a6577
+  _name: Zara
+  _slug: zara
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/sn5zPKYfTBarVDk61NIasg-image.png
+  type: brand
+  fields:
+    brandLogo:
+      type: asset
+      value:
+        - _id: 43f0108e-bb11-43e8-9e75-d016eb441b3b
+          type: image
+          fields:
+            id:
+              type: text
+              value: c5e90eb4-7289-434d-a61c-bf9daee49ca7
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/sn5zPKYfTBarVDk61NIasg-image.png
+              type: text
+            file:
+              type: file
+              value: ebc0fe1e-b289-49d2-8276-9d59c2b3218b
+            size:
+              value: 38113
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 1000
+              type: number
+            height:
+              value: 421
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    displayname:
+      type: text
+      value: Zara
+  _locales:
+    - en

@@ -1,0 +1,75 @@
+created: '2025-02-26T19:34:09.440559+00:00'
+modified: '2025-02-26T23:21:25.462136+00:00'
+pattern: false
+entry:
+  _id: e351baf7-dac7-4e30-af1e-2c36315c39dd
+  _name: American Deal
+  _slug: american-deal
+  _thumbnail: >-
+    https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/ZaHXQArbSUmjYEETlHnkbw-image.png
+  type: deal
+  fields:
+    url:
+      type: link
+      value:
+        path: /${locale}/deals/american-deal
+        type: projectMapNode
+        nodeId: fdc238e6-2f87-404d-abfa-078d7dc64678
+        projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9
+        dynamicInputValues:
+          deal: american-deal
+          locale: ${locale}
+    brands:
+      type: contentReference
+      value: ${#jptr:/ref-e351baf7-dac7-4e30-af1e-2c36315c39dd-brands/entries}
+    displayName:
+      type: text
+      value: American Deal
+    responsiveImage:
+      type: asset
+      locales:
+        en:
+          - _id: 99dd6833-12f4-4544-9b51-8a02f02a7b89
+            type: image
+            fields:
+              id:
+                type: text
+                value: 91855397-6c7e-4242-9caa-ccecb5d4ab4c
+              url:
+                value: >-
+                  https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/ZaHXQArbSUmjYEETlHnkbw-image.png
+                type: text
+              file:
+                type: file
+                value: 31286848-b9f6-4e96-8e16-839a3fdc47c4
+              size:
+                value: 901047
+                type: number
+              title:
+                type: text
+                value: image.png
+              width:
+                value: 1600
+                type: number
+              height:
+                value: 889
+                type: number
+              mediaType:
+                value: image/png
+                type: text
+            _source: uniform-assets
+      value: []
+    programmaticPersonalizationAudience:
+      type: text
+      value: americansignal
+    programmaticPersonalizationEnrichmentScore:
+      type: text
+      value: Tommy Hilfiger
+  _dataResources:
+    ref-e351baf7-dac7-4e30-af1e-2c36315c39dd-brands:
+      type: uniformContentInternalReference
+      variables:
+        locale: ${locale}
+        entryIds: 6a8ca31b-9382-4736-be31-d875d7d74791
+  _locales:
+    - en

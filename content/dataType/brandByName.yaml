@@ -1,0 +1,29 @@
+id: brandByName
+displayName: Brand by Name
+ttl: 30
+path: /query
+custom:
+  proposedName: Query Brand
+  allowedContentTypes:
+    - brand
+method: GET
+purgeKey: 7f09e51b-5ffa-4143-ac11-71b815ef8b4e
+archetype: queryEntries
+variables:
+  limit:
+    type: text
+    default: '20'
+  offset:
+    type: text
+    default: '0'
+  filters:
+    type: text
+    default: '{}'
+  orderBy:
+    type: text
+    default: ''
+  contentTypes:
+    type: text
+    default: ''
+dataSourceId: uniformContent
+allowedOnComponents: []
