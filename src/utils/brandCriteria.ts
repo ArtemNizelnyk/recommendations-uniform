@@ -37,7 +37,7 @@ export function extractBrandIdsFromCriteria(criteria: PersonalizationCriteria | 
     .map(criterion => {
       // Extract the brand name from the criterion (e.g., "brand_wayfair" -> "wayfair")
       const brandName = criterion.l.replace('brand_', '');
-      
+
       // Convert to proper case for display (e.g., "wayfair" -> "Wayfair")
       return brandName.charAt(0).toUpperCase() + brandName.slice(1);
     });
@@ -52,11 +52,11 @@ export function formatBrandIdForLookup(brandName: string): string {
   // This function would map the brand name to the actual ID in your system
   // For now, we'll use a simple mapping for the known brands
   const brandMap: Record<string, string> = {
-    'Wayfair': '06b03cc3-d108-4504-a578-825190ea17ff',
-    'Bowflex': 'ab57d7f9-2284-4dd0-ba4b-f200579b9117',
-    'WholeFoods': '53aef820-3193-47b5-87a6-25cc3555c368'
+    Wayfair: '06b03cc3-d108-4504-a578-825190ea17ff',
+    Bowflex: 'ab57d7f9-2284-4dd0-ba4b-f200579b9117',
+    WholeFoods: '53aef820-3193-47b5-87a6-25cc3555c368',
   };
-  
+
   return brandMap[brandName] || brandName;
 }
 
@@ -72,12 +72,12 @@ export function createBrandCriteria(brandNames: string[]): PersonalizationCriter
       crit: brandNames.map(name => ({
         l: `brand_${name.toLowerCase()}`,
         op: '>',
-        r: '10'
+        r: '10',
       })),
       name: '',
-      op: '|' // OR operator
-    }
+      op: '|', // OR operator
+    },
   };
-  
+
   return criteria;
-} 
+}

@@ -72,7 +72,7 @@ async function getBrandDataFromIds(brandIds: string[]): Promise<BrandData[]> {
       const fields = entry.entry.fields || {};
       const brandLogo = fields.brandLogo?.value;
       let logoUrl = '';
-      
+
       // Safely access the logo URL with proper type checking
       if (Array.isArray(brandLogo) && brandLogo.length > 0 && brandLogo[0]?.fields?.url?.value) {
         logoUrl = brandLogo[0].fields.url.value;

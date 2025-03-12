@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
 
     // Filter out IDs that are already in the cache
     const uncachedIds = brandIds.filter(id => !brandCache.has(id));
-    
+
     // Only make API call if there are uncached IDs
     if (uncachedIds.length > 0) {
       const contentClient = new ContentClient({
@@ -67,12 +67,14 @@ export async function POST(req: NextRequest) {
     // Combine cached brands for all requested IDs
     const allRequestedBrands = brandIds.map(id => {
       // Return cached brand if available, otherwise return a placeholder
-      return brandCache.get(id) || {
-        id,
-        name: `Unknown Brand (${id})`,
-        logo: '',
-        description: '',
-      };
+      return (
+        brandCache.get(id) || {
+          id,
+          name: `Unknown Brand (${id})`,
+          logo: '',
+          description: '',
+        }
+      );
     });
 
     return NextResponse.json(allRequestedBrands);
@@ -84,11 +86,11 @@ export async function POST(req: NextRequest) {
 
 function formatBrand(entry: any): Brand {
   const fields = entry.entry.fields || {};
-  
+
   return {
     id: entry.entry._id || '',
     name: fields.displayname?.value || 'Unknown Brand',
     logo: fields.brandLogo?.value?.[0]?.fields?.url?.value || '',
     description: fields.description?.value || '',
   };
-} 
+}

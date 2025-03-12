@@ -30,7 +30,7 @@ const RecommendationsList: FC<RecommendationsListProps> = ({ component, context,
             Personalized deals based on your preferences and browsing history.
           </p>
         </div>
-        
+
         <div className="flex flex-wrap justify-center gap-6">
           <UniformSlot data={component} context={context} slot={slots.deals} />
         </div>

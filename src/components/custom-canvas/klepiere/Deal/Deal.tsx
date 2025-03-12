@@ -57,14 +57,14 @@ const globalBrandCache = new Map<string, BrandData>();
 
 const Deal: FC<DealProps> = ({ component, context, slots }) => {
   const displayName = component?.parameters?.displayName?.value || 'Deal';
-  
+
   // Fix the type error by safely accessing the image URL
   let imageUrl = '';
   const imageValue = component?.parameters?.image?.value;
   if (Array.isArray(imageValue) && imageValue.length > 0 && imageValue[0]?.fields?.url?.value) {
     imageUrl = imageValue[0].fields.url.value;
   }
-  
+
   const compositionData = component?.parameters?.compositionData?.value;
   const directBrands = component?.parameters?.brands?.value;
   const [brands, setBrands] = useState<BrandData[]>([]);
@@ -81,7 +81,7 @@ const Deal: FC<DealProps> = ({ component, context, slots }) => {
         if (Array.isArray(brandLogo) && brandLogo.length > 0 && brandLogo[0]?.fields?.url?.value) {
           logoUrl = brandLogo[0].fields.url.value;
         }
-        
+
         return {
           id: brand.entry?._id || '',
           name: brand.entry?.fields?.displayname?.value || 'Unknown Brand',
@@ -89,15 +89,15 @@ const Deal: FC<DealProps> = ({ component, context, slots }) => {
           description: '',
         };
       });
-      
+
       setBrands(extractedBrands);
       return; // Skip the API call if we have direct brand references
     }
-    
+
     // Otherwise, proceed with fetching brands from the API
     const fetchBrandData = async () => {
       if (!compositionData) return;
-      
+
       setIsLoading(true);
       try {
         // Extract brand IDs using the new criteria format
@@ -110,7 +110,7 @@ const Deal: FC<DealProps> = ({ component, context, slots }) => {
         // Check if we already have these brands in the cache
         const cachedBrands: BrandData[] = [];
         const uncachedIds: string[] = [];
-        
+
         brandIds.forEach(id => {
           const cachedBrand = globalBrandCache.get(id);
           if (cachedBrand) {
@@ -119,14 +119,14 @@ const Deal: FC<DealProps> = ({ component, context, slots }) => {
             uncachedIds.push(id);
           }
         });
-        
+
         // If all brands are cached, use them directly
         if (uncachedIds.length === 0) {
           setBrands(cachedBrands);
           setIsLoading(false);
           return;
         }
-        
+
         // Fetch only the uncached brands
         const response = await fetch('/api/brands', {
           method: 'POST',
@@ -143,12 +143,12 @@ const Deal: FC<DealProps> = ({ component, context, slots }) => {
         }
 
         const fetchedBrands: BrandData[] = await response.json();
-        
+
         // Update the cache with the new brands
         fetchedBrands.forEach(brand => {
           globalBrandCache.set(brand.id, brand);
         });
-        
+
         // Combine cached and newly fetched brands
         setBrands([...cachedBrands, ...fetchedBrands]);
       } catch (error) {
@@ -174,28 +174,22 @@ const Deal: FC<DealProps> = ({ component, context, slots }) => {
     <div className="flex h-full w-full max-w-sm flex-col overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
       {/* Colored top bar */}
       <div className="h-2 bg-indigo-600"></div>
-      
+
       <div className="flex grow flex-col p-6">
         {/* Deal image */}
         <div className="mb-4 h-40 overflow-hidden rounded-md bg-gray-100">
           {imageUrl ? (
-            <img 
-              src={imageUrl} 
-              alt={displayName as string} 
-              className="h-full w-full object-cover"
-            />
+            <img src={imageUrl} alt={displayName as string} className="h-full w-full object-cover" />
           ) : (
             <div className="flex h-full items-center justify-center">
               <span className="text-gray-400">No image available</span>
             </div>
           )}
         </div>
-        
+
         {/* Deal name */}
         <div className="mb-4">
-          <div className="mb-1 text-sm font-semibold uppercase tracking-wide text-indigo-600">
-            Special Offer
-          </div>
+          <div className="mb-1 text-sm font-semibold uppercase tracking-wide text-indigo-600">Special Offer</div>
           <h2 className="text-xl font-bold text-gray-900">
             <UniformText
               placeholder="Deal name"
@@ -206,7 +200,7 @@ const Deal: FC<DealProps> = ({ component, context, slots }) => {
             />
           </h2>
         </div>
-        
+
         {/* Brands section */}
         <div className="mt-auto">
           <h3 className="mb-2 font-medium text-gray-700">Featured Brands:</h3>
@@ -214,14 +208,10 @@ const Deal: FC<DealProps> = ({ component, context, slots }) => {
             <p className="text-sm text-gray-500">Loading brands...</p>
           ) : brands.length > 0 ? (
             <div className="flex flex-wrap gap-3">
-              {brands.map((brand) => (
+              {brands.map(brand => (
                 <div key={brand.id} className="flex items-center gap-2 rounded-lg bg-gray-100 px-3 py-2">
                   {brand.logo && (
-                    <img 
-                      src={brand.logo} 
-                      alt={brand.name} 
-                      className="h-6 w-6 rounded-full object-cover"
-                    />
+                    <img src={brand.logo} alt={brand.name} className="h-6 w-6 rounded-full object-cover" />
                   )}
                   <span className="text-sm font-medium text-gray-800">{brand.name}</span>
                 </div>
@@ -231,7 +221,7 @@ const Deal: FC<DealProps> = ({ component, context, slots }) => {
             <p className="text-sm text-gray-500">No brands associated with this deal</p>
           )}
         </div>
-        
+
         {/* Call to action */}
         <button className="mt-4 w-full rounded-md bg-indigo-600 py-2 text-white transition-colors hover:bg-indigo-700">
           View Deal
@@ -249,14 +239,14 @@ function extractBrandIdsFromCompositionData(compositionData: any): string[] {
       const brandNames = extractBrandIdsFromCriteria(compositionData.$pzCrit);
       return brandNames.map(name => formatBrandIdForLookup(name));
     }
-    
+
     // Check if criteria is in a different format or location
     if (compositionData && compositionData.criteria) {
       // Try to find brand criteria in the criteria array
-      const brandCriteria = compositionData.criteria.find((crit: any) => 
-        crit && crit.l && (crit.l.startsWith('brand:') || crit.l.startsWith('brand_'))
+      const brandCriteria = compositionData.criteria.find(
+        (crit: any) => crit && crit.l && (crit.l.startsWith('brand:') || crit.l.startsWith('brand_'))
       );
-      
+
       if (brandCriteria) {
         // Extract brand name from the criterion
         const brandName = brandCriteria.l.replace(/^brand[_:]/, '');
@@ -264,11 +254,9 @@ function extractBrandIdsFromCompositionData(compositionData: any): string[] {
         return [formatBrandIdForLookup(formattedName)];
       }
     }
-    
+
     // If not, look for brand references in _dataResources
-    const brandsRef = Object.entries(compositionData?._dataResources || {}).find(
-      ([key]) => key.includes('-brands')
-    );
+    const brandsRef = Object.entries(compositionData?._dataResources || {}).find(([key]) => key.includes('-brands'));
 
     if (!brandsRef || !brandsRef[1]) return [];
 
