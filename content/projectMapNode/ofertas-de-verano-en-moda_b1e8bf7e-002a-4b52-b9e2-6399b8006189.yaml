@@ -1,0 +1,9 @@
+id: b1e8bf7e-002a-4b52-b9e2-6399b8006189
+name: Ofertas de Verano en Moda
+order: 500
+path: /:locale/deal-compositions/ofertas-de-verano-en-moda
+type: composition
+pathSegment: ofertas-de-verano-en-moda
+data: {}
+compositionId: 1d70002d-5015-45ee-82ca-c255668e6c03
+projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9

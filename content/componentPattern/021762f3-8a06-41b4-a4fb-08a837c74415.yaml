@@ -98,8 +98,11 @@ composition:
           text:
             type: text
             locales:
-              en: Deals
+              en: ${#jptr:/Brand Content/entry/_slug}
         _overridability:
+          parameters:
+            link: 'yes'
+            text: 'yes'
           hideLockedParameters: true
       - _id: 8f597ca1-cba2-4d30-bf2b-24e679c8a4a3
         type: navigationLink
@@ -136,55 +139,63 @@ composition:
           text:
             type: text
             locales:
-              en: Recomendations
+              en: Recomendations with Entries
         _overridability:
           hideLockedParameters: true
-      - _id: dfcd6977-7167-42ed-911f-c86f7b22e068
-        type: $personalization
-        slots:
-          pz:
-            - _id: 52967e66-74c2-44eb-b705-768286162bb2
-              type: navigationLink
-              parameters:
-                text:
-                  type: text
-                  locales:
-                    en: Link For Americans
-                $pzCrit:
-                  type: $pzCrit
-                  value:
-                    crit:
-                      - l: americansignal
-                        r: '1'
-                        op: '>'
-                    name: 'Navigation Link: Link For Artem'
-              _overridability:
-                parameters:
-                  text: 'yes'
-                  $pzCrit: 'no'
-                hideLockedParameters: true
-            - _id: 5639195d-ad6e-489f-8bfd-39919123b230
-              type: navigationLink
-              parameters:
-                text:
-                  type: text
-                  locales:
-                    en: Link for Spanish
-              _overridability:
-                hideLockedParameters: true
+      - _id: 81fd1018-65de-4104-9326-c9fa0a426bbe
+        type: navigationLink
         parameters:
-          trackingEventName:
+          link:
+            type: link
+            locales:
+              en:
+                path: /${locale}/composition-recommendations
+                type: projectMapNode
+                nodeId: fd187ff5-ad9f-45bf-b9b9-e9f4f57d3957
+                projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9
+                dynamicInputValues:
+                  locale: ${locale}
+          text:
             type: text
-            value: Link per country
+            locales:
+              en: Recommendations with Composition
         _overridability:
           hideLockedParameters: true
+      - _id: 157e35ff-7d81-4db1-9dc2-9d31747a3d8a
+        type: navigationLink
+        parameters:
+          link:
+            type: link
+            locales:
+              en:
+                path: /${locale}/composition-entry-recommendations
+                type: projectMapNode
+                nodeId: 4fe50be3-f0c0-4429-a9e3-4bf6d2bf1917
+                projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9
+                dynamicInputValues:
+                  locale: ${locale}
+          text:
+            type: text
+            locales:
+              en: (Hybrid) Recommendations with Composition and Entry
+        _overridability:
+          hideLockedParameters: true
+  _dataResources:
+    Brand Content:
+      type: brand
+      variables:
+        locale: ${locale}
+        entryId: 53aef820-3193-47b5-87a6-25cc3555c368
+      isPatternParameter: true
+      ignorePatternParameterDefault: true
   _overridability:
+    variants: true
     parameters:
       displayName: 'yes'
   _locales:
     - en
 created: '2025-02-26T11:34:21.710116+00:00'
-modified: '2025-03-11T13:11:09.393034+00:00'
+modified: '2025-03-14T14:29:33.801969+00:00'
 pattern: true
 previewImageUrl: >-
   https://res.cloudinary.com/uniform-demos/image/upload/csk-v-next/baseline/preview-images/main-header.jpg

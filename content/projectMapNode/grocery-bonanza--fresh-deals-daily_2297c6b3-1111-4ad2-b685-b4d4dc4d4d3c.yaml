@@ -1,0 +1,9 @@
+id: 2297c6b3-1111-4ad2-b685-b4d4dc4d4d3c
+name: 'Grocery Bonanza: Fresh Deals Daily'
+order: 500
+path: /:locale/deal-compositions/grocery-bonanza--fresh-deals-daily
+type: composition
+pathSegment: grocery-bonanza--fresh-deals-daily
+data: {}
+compositionId: dab445bb-7a2e-4bc5-9f57-f922bfdf883a
+projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9

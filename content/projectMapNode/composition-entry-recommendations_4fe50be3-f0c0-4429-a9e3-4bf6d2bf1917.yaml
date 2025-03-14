@@ -1,0 +1,9 @@
+id: 4fe50be3-f0c0-4429-a9e3-4bf6d2bf1917
+name: composition-entry-recommendations
+order: 500
+path: /:locale/composition-entry-recommendations
+type: composition
+pathSegment: composition-entry-recommendations
+data: {}
+compositionId: dfc9f7c9-a062-48ff-81bd-8c3860fc20c9
+projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9

@@ -1,0 +1,10 @@
+id: brand
+name: Brand
+cap: 100
+values:
+  - id: bowflex
+    value: Bowflex
+  - id: wayfair
+    value: Wayfair
+  - id: wholeFoods
+    value: Whole Foods

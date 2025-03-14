@@ -1,0 +1,9 @@
+id: 5cafe97e-2ceb-40b2-98db-28b244c6aece
+name: Semana Española de Descuentos en Electrónica
+order: 500
+path: /:locale/deal-compositions/semana-espa-ola-de-descuentos-en-electr-nica
+type: composition
+pathSegment: semana-espa-ola-de-descuentos-en-electr-nica
+data: {}
+compositionId: fc543333-9be3-44f7-b983-a60964676d27
+projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9

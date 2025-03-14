@@ -1,0 +1,9 @@
+id: 1ab23ec1-1856-4524-b124-495e59f1bce4
+name: Spain Deal
+order: 500
+path: /:locale/deal-compositions/spain-deal
+type: composition
+pathSegment: spain-deal
+data: {}
+compositionId: 7437b6ba-4eba-4eac-945b-f5a1f6ae80df
+projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9

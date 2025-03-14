@@ -1,0 +1,86 @@
+composition:
+  _name: composition-recommendations
+  _id: bd425a82-f327-4e8a-8392-0b1286d363e3
+  _slug: composition-recommendations
+  type: page
+  parameters:
+    pageTitle:
+      type: text
+      locales:
+        en: composition-recommendations
+  slots:
+    pageHeader:
+      - _id: 621b548d-ec68-47d7-9ec8-fea9f2382f0e
+        type: header
+        _pattern: 021762f3-8a06-41b4-a4fb-08a837c74415
+    pageContent:
+      - _id: 48aee017-7946-4269-8e4b-1d64755e5c3a
+        type: $personalization
+        slots:
+          pz:
+            - _id: 8cac4aa9-06af-41a2-b420-8bc0024df3b5
+              type: fixedHero
+              parameters:
+                titleTag:
+                  type: dex-segmented-control-parameter
+                  value: h2
+            - _id: 0dbabe2f-40bc-4411-a502-f4cf6b67cd91
+              type: fixedHero
+              parameters:
+                $pzCrit:
+                  type: $pzCrit
+                  value:
+                    op: '|'
+                    crit:
+                      - l: brand_bowflex
+                        r: '10'
+                        op: '>'
+                      - l: brand_wayfair
+                        r: '10'
+                        op: '>'
+                    name: ''
+                titleTag:
+                  type: dex-segmented-control-parameter
+                  value: h2
+      - _id: 3ab8b4a8-fab8-40a1-8031-4873f888c0f3
+        type: recommendationsList
+        slots:
+          deals:
+            - _id: 80646c11-deeb-47f3-9798-5b56da7af25a
+              type: $loop
+              slots:
+                body:
+                  - _id: 440b718b-9ab5-4d75-8abf-e968a346444e
+                    type: deal
+                    parameters:
+                      image:
+                        type: asset
+                        value: >-
+                          ${#jptr:/Deals compositions Loop
+                          Item/composition/parameters/image/value}
+                      displayName:
+                        type: text
+                        value: >-
+                          ${#jptr:/Deals compositions Loop
+                          Item/composition/_name}
+                      compositionData:
+                        type: json
+                        value: ${#jptr:/Deals compositions Loop Item/composition}
+              _dataResources:
+                Deals compositions Loop Item:
+                  type: sys-reserved-loop
+                  variables:
+                    connectedData: '#jptr:/Deals/compositions:fa=c'
+        parameters:
+          displayName:
+            type: text
+            value: Recommendations List
+  _dataResources:
+    Deals:
+      type: composition
+      variables: {}
+  _locales:
+    - en
+created: '2025-03-12T01:22:29.747573+00:00'
+modified: '2025-03-12T15:31:47.875353+00:00'
+pattern: false

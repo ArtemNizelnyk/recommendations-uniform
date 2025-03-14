@@ -1,0 +1,9 @@
+id: 6462b817-cce8-482b-bbc6-15b47d22e225
+name: 'Apparel Flash Sale: Limited Time Offers'
+order: 500
+path: /:locale/deal-compositions/apparel-flash-sale--limited-time-offers
+type: composition
+pathSegment: apparel-flash-sale--limited-time-offers
+data: {}
+compositionId: b8459f54-ef6b-4c97-8790-01e1a907f023
+projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9

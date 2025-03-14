@@ -1,0 +1,9 @@
+id: bccc97d8-7add-4e95-998a-e97fed6d704e
+name: American deal
+order: 500
+path: /:locale/deal-compositions/american-deal
+type: composition
+pathSegment: american-deal
+data: {}
+compositionId: 58637d83-65fc-4a4e-8e2d-402b27ae3ddb
+projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9

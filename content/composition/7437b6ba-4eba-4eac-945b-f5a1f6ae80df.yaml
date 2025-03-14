@@ -1,0 +1,56 @@
+composition:
+  _name: Spain Deal
+  _id: 7437b6ba-4eba-4eac-945b-f5a1f6ae80df
+  _slug: spain-deal
+  type: deal
+  parameters:
+    image:
+      type: asset
+      value:
+        - _id: e7aa3efa-afec-49d7-9903-78474213d605
+          type: image
+          fields:
+            id:
+              type: text
+              value: 308f56e1-e684-448b-989b-6254cc54bfbf
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/TLjcIF2IRoWp3bRQsMDHWw-image.png
+              type: text
+            file:
+              type: file
+              value: 64379fd6-6e8c-4a04-8980-6f886b19c1db
+            size:
+              value: 289776
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 2560
+              type: number
+            height:
+              value: 1707
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    brands:
+      type: contentReference
+      value: ${#jptr:/ref-7437b6ba-4eba-4eac-945b-f5a1f6ae80df-brands/entries}
+    displayName:
+      type: text
+      value: Spain Deal
+  _dataResources:
+    ref-7437b6ba-4eba-4eac-945b-f5a1f6ae80df-brands:
+      type: uniformContentInternalReference
+      variables:
+        locale: ${locale}
+        entryIds: >-
+          092985a1-db92-4fbc-8aab-fc278f2a6577,4522b2ba-b1bf-420b-9b8c-84f7eaa94cc1
+  _locales:
+    - en
+created: '2025-03-12T03:58:35.331202+00:00'
+modified: '2025-03-12T03:59:10.170161+00:00'
+pattern: false

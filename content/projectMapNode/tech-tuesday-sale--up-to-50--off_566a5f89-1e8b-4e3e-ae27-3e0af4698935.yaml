@@ -1,0 +1,9 @@
+id: 566a5f89-1e8b-4e3e-ae27-3e0af4698935
+name: 'Tech Tuesday Sale: Up to 50% Off'
+order: 500
+path: /:locale/deal-compositions/tech-tuesday-sale--up-to-50--off
+type: composition
+pathSegment: tech-tuesday-sale--up-to-50--off
+data: {}
+compositionId: 3c105f4c-de5b-4750-9b77-d1fa7c93988f
+projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9

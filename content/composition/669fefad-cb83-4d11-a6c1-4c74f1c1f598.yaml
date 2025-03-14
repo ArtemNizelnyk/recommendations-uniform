@@ -1,0 +1,55 @@
+composition:
+  _name: Rebajas en Muebles de Interior
+  _id: 669fefad-cb83-4d11-a6c1-4c74f1c1f598
+  _slug: rebajas-en-muebles-de-interior
+  type: deal
+  parameters:
+    image:
+      type: asset
+      value:
+        - _id: 724fac6f-11a8-4ca8-be6b-9e8e1d225cbd
+          type: image
+          fields:
+            id:
+              type: text
+              value: efdb17bc-a046-4aa0-bc9c-6078b0af02dd
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/A7pDVMZfTiGujiqrUiaNLw-image.png
+              type: text
+            file:
+              type: file
+              value: 7fe6ac0c-cd97-4e5e-a251-1432a53de08e
+            size:
+              value: 2081822
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 2000
+              type: number
+            height:
+              value: 1000
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    brands:
+      type: contentReference
+      value: ${#jptr:/ref-669fefad-cb83-4d11-a6c1-4c74f1c1f598-brands/entries}
+    displayName:
+      type: text
+      value: Rebajas en Muebles de Interior
+  _dataResources:
+    ref-669fefad-cb83-4d11-a6c1-4c74f1c1f598-brands:
+      type: uniformContentInternalReference
+      variables:
+        locale: ${locale}
+        entryIds: e9c1195d-8e44-4e3f-9a8f-ad1b560a20c7
+  _locales:
+    - en
+created: '2025-03-12T04:02:24.148411+00:00'
+modified: '2025-03-12T04:02:52.87458+00:00'
+pattern: false

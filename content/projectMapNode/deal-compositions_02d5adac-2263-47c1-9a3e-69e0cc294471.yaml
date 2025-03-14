@@ -1,0 +1,8 @@
+id: 02d5adac-2263-47c1-9a3e-69e0cc294471
+name: Deal Compositions
+order: 500
+path: /:locale/deal-compositions
+type: placeholder
+pathSegment: deal-compositions
+data: {}
+projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9

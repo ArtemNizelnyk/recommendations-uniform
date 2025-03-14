@@ -165,6 +165,8 @@ slots:
       - $loop
       - $personalization
       - recommendationsComponent
+      - recommendationsList
+      - recommendationsListWithEntry
     allowAllComponents: false
     inheritAllowedComponents: false
     patternsInAllowedComponents: false
@@ -179,4 +181,4 @@ titleParameter: pageTitle
 thumbnailParameter: openGraphImage
 canBeComposition: true
 created: '2025-02-26T11:34:19.547557+00:00'
-updated: '2025-02-26T20:18:28.987818+00:00'
+updated: '2025-03-14T14:31:17.673485+00:00'

@@ -1,0 +1,28 @@
+id: composition
+displayName: composition
+ttl: 30
+path: /canvas
+custom:
+  proposedName: canvas
+method: GET
+purgeKey: 04f74a95-a7e0-4ef4-ab4f-5e5e1b644d4a
+archetype: default
+parameters:
+  - key: type
+    value: deal
+  - key: projectId
+    value: 9cd93497-3cd8-4a0a-819a-868c5f34e6c0
+  - key: state
+    value: '64'
+  - key: skipEnhance
+    value: 'false'
+  - key: skipOverridesResolution
+    value: 'false'
+  - key: skipParameterResolution
+    value: 'false'
+  - key: skipPatternResolution
+    value: 'false'
+  - key: locale
+    value: en
+dataSourceId: uniformCanvas
+allowedOnComponents: []

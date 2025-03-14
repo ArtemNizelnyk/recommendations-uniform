@@ -1,0 +1,56 @@
+composition:
+  _name: Semana Española de Descuentos en Electrónica
+  _id: fc543333-9be3-44f7-b983-a60964676d27
+  _slug: semana-espa-ola-de-descuentos-en-electr-nica
+  type: deal
+  parameters:
+    image:
+      type: asset
+      value:
+        - _id: 329ca569-dc30-412f-a1e1-8890958cd831
+          type: image
+          fields:
+            id:
+              type: text
+              value: f59ce976-9604-4434-ba75-5fbc88121f0d
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/wb7q_3kmQxe3VhFZecFrbA-image.png
+              type: text
+            file:
+              type: file
+              value: 00687f16-196c-4c97-a6f6-514c57b74de1
+            size:
+              value: 477318
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 1960
+              type: number
+            height:
+              value: 1100
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    brands:
+      type: contentReference
+      value: ${#jptr:/ref-fc543333-9be3-44f7-b983-a60964676d27-brands/entries}
+    displayName:
+      type: text
+      value: Semana Española de Descuentos en Electrónica
+  _dataResources:
+    ref-fc543333-9be3-44f7-b983-a60964676d27-brands:
+      type: uniformContentInternalReference
+      variables:
+        locale: ${locale}
+        entryIds: >-
+          8ff63c25-41b2-422f-b673-44b01946f02e,b16e536e-85e5-48b8-965f-bfe607fce861
+  _locales:
+    - en
+created: '2025-03-12T03:59:48.811694+00:00'
+modified: '2025-03-12T04:00:12.84293+00:00'
+pattern: false

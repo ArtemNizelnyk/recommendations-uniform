@@ -1,0 +1,56 @@
+composition:
+  _name: 'Home Decor Discounts: Refresh Your Space'
+  _id: 83ed82c2-72d2-4783-8503-e6f625ae7580
+  _slug: home-decor-discounts--refresh-your-space
+  type: deal
+  parameters:
+    image:
+      type: asset
+      value:
+        - _id: 86b0f64a-2abb-48fe-8cb9-4d866eae62b9
+          type: image
+          fields:
+            id:
+              type: text
+              value: b144a643-586d-4831-9ac2-b956e93f55da
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/Q8mcR7FST8WqsxHg0TtTTg-image.png
+              type: text
+            file:
+              type: file
+              value: 801e3944-6b04-4cfc-96da-d11ae4535d94
+            size:
+              value: 92485
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 225
+              type: number
+            height:
+              value: 225
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    brands:
+      type: contentReference
+      value: ${#jptr:/ref-83ed82c2-72d2-4783-8503-e6f625ae7580-brands/entries}
+    displayName:
+      type: text
+      value: 'Home Decor Discounts: Refresh Your Space'
+  _dataResources:
+    ref-83ed82c2-72d2-4783-8503-e6f625ae7580-brands:
+      type: uniformContentInternalReference
+      variables:
+        locale: ${locale}
+        entryIds: >-
+          e9c1195d-8e44-4e3f-9a8f-ad1b560a20c7,06b03cc3-d108-4504-a578-825190ea17ff
+  _locales:
+    - en
+created: '2025-03-12T04:04:39.387009+00:00'
+modified: '2025-03-12T04:05:01.873422+00:00'
+pattern: false

@@ -188,3 +188,111 @@ Currently, grouping is supported for:
 ## Publishing manifest file via CLI
 
 1. Run `npm run uniform:publish` to publish the manifest with A/B testing and personalization configuration.
+
+# Uniform Recommendations Implementation
+
+This project demonstrates three different approaches to implementing personalized recommendations using Uniform DXP. Each approach has its own advantages and use cases, providing flexibility in how you deliver personalized content to your users.
+
+## Overview
+
+This application showcases three distinct methods for implementing recommendations:
+
+1. **Search-based Recommendations**
+2. **Personalization with Composition Data**
+3. **Personalization with Entry Data**
+
+Each approach leverages Uniform's capabilities in different ways, from direct API calls to composition transformations.
+
+## Approaches to Recommendations
+
+### 1. Search-based Recommendations
+
+This approach uses direct API calls to fetch and filter recommendations based on user signals and enrichments.
+
+**Key Components:**
+- `Recommendations.tsx`: Client-side component that fetches recommendations based on user signals
+- `Deal.tsx`: Displays individual deal cards with brand information
+- `api/recommendations/route.ts`: Server-side API endpoint that queries Uniform CMS
+- `EnrichmentScoreComponent.tsx`: Tracks user interactions to build user profiles
+
+**How it works:**
+1. The `Recommendations` component extracts user signals from localStorage (ufvisitor)
+2. It identifies the user type (American, Spanish, or Everyone) based on session scores
+3. It collects brand enrichments from the user's profile
+4. It makes a POST request to the `/api/recommendations` endpoint with user type and enrichments
+5. The API endpoint uses these parameters to query Uniform CMS with appropriate sorting
+6. Results are displayed as deal cards with pagination
+
+**Advantages:**
+- Real-time filtering and sorting based on the latest user data
+- Direct control over the recommendation algorithm
+- Ability to implement complex sorting logic on the server
+
+### 2. Personalization with Composition Data
+
+This approach transforms compositions on the server to wrap deals in personalization components based on brand data.
+
+**Key Components:**
+- `transformRecommendations.ts`: Server-side utility that transforms compositions
+- `Deal.tsx`: Component that resolves brand data from composition or API
+- `DealGrid.tsx`: Container for displaying multiple deals
+- `RecommendationsList.tsx`: Component that displays personalized recommendations
+- `brandCriteria.ts`: Utilities for handling brand criteria
+- `page.tsx`: Page component that applies transformations
+
+**How it works:**
+1. When a page loads, `page.tsx` checks if it contains a `recommendationsList` component
+2. If found, it applies the `transformRecommendationsInComposition` transformation
+3. This transformation:
+   - Finds deals in the composition
+   - Extracts brand IDs from each deal's composition data
+   - Fetches brand names from the CMS
+   - Creates personalization criteria for each deal based on brand names
+   - Wraps deals in a personalization component with these criteria
+4. The `Deal` component then resolves brand data either from direct references or by making API calls
+
+**Advantages:**
+- Server-side transformation means personalization logic runs before the page is sent to the client
+- Reuses existing composition data without requiring additional API calls
+- Maintains a clean separation between content structure and personalization logic
+
+### 3. Personalization with Entry Data
+
+This approach uses pre-provided entry data to create personalized recommendations without additional API calls.
+
+**Key Components:**
+- `RecommendationCompositionEntry.tsx`: Component for displaying recommendations with entry data
+- `transformRecommendationsForEntry.ts`: Server-side transformation for entry-based recommendations
+- `DealForEntry.tsx`: Component that renders deals using pre-provided brand data
+
+**How it works:**
+1. When a page loads, `page.tsx` checks if it contains a `recommendationsListWithEntry` component
+2. If found, it applies the `transformRecommendationsForEntry` transformation
+3. This transformation:
+   - Finds deals in the composition
+   - Extracts brand names directly from the pre-provided entry data
+   - Creates personalization criteria based on these brand names
+   - Wraps deals in a personalization component with these criteria
+4. The `DealForEntry` component renders deals using the brand data that's already included in the composition
+
+**Advantages:**
+- No additional API calls needed to resolve brand data
+- Faster rendering as all data is available immediately
+- Simplified component implementation with direct access to all required data
+
+## Choosing the Right Approach
+
+- **Use Search-based** when you need real-time filtering and complex sorting logic
+- **Use Composition Data** when you want to leverage existing composition structures with dynamic brand resolution
+- **Use Entry Data** when performance is critical and you can pre-provide all necessary data
+
+## Getting Started
+
+1. Clone this repository
+2. Install dependencies with `npm install`
+3. Set up your Uniform project and configure environment variables
+4. Run the development server with `npm run dev`
+5. Explore the different recommendation approaches at:
+   - `/recomendations` for search-based recommendations
+   - `/composition-recommendations` for composition-based recommendations
+   - `/composition-entry-recommendations` for entry-based recommendations

@@ -1,0 +1,56 @@
+composition:
+  _name: Ofertas de Verano en Moda
+  _id: 1d70002d-5015-45ee-82ca-c255668e6c03
+  _slug: ofertas-de-verano-en-moda
+  type: deal
+  parameters:
+    image:
+      type: asset
+      value:
+        - _id: 078eb2c5-3af5-4e8a-9fff-255d718aaa6a
+          type: image
+          fields:
+            id:
+              type: text
+              value: 4ec3459b-ba12-4451-bc32-fdbe8c8fade5
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/d30NkelDT5mZNSwdoPMd5Q-image.png
+              type: text
+            file:
+              type: file
+              value: 840f3396-b47c-498e-8ba0-3de544e2ae9e
+            size:
+              value: 221938
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 626
+              type: number
+            height:
+              value: 360
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    brands:
+      type: contentReference
+      value: ${#jptr:/ref-1d70002d-5015-45ee-82ca-c255668e6c03-brands/entries}
+    displayName:
+      type: text
+      value: Ofertas de Verano en Moda
+  _dataResources:
+    ref-1d70002d-5015-45ee-82ca-c255668e6c03-brands:
+      type: uniformContentInternalReference
+      variables:
+        locale: ${locale}
+        entryIds: >-
+          092985a1-db92-4fbc-8aab-fc278f2a6577,4522b2ba-b1bf-420b-9b8c-84f7eaa94cc1
+  _locales:
+    - en
+created: '2025-03-12T04:00:35.525476+00:00'
+modified: '2025-03-12T04:01:01.461233+00:00'
+pattern: false

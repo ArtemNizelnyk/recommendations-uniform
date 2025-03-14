@@ -1,0 +1,56 @@
+composition:
+  _name: 'Apparel Flash Sale: Limited Time Offers'
+  _id: b8459f54-ef6b-4c97-8790-01e1a907f023
+  _slug: apparel-flash-sale--limited-time-offers
+  type: deal
+  parameters:
+    image:
+      type: asset
+      value:
+        - _id: 1eafa8ee-a9e3-4008-a652-28889e0b499d
+          type: image
+          fields:
+            id:
+              type: text
+              value: 16805d8d-02b5-4746-b8d3-debb165c48eb
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/AzKB8O17Q_Wu4v2wiEzmvw-image.png
+              type: text
+            file:
+              type: file
+              value: aaf429f0-4cb0-4512-8350-033b27bac3d0
+            size:
+              value: 91322
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 455
+              type: number
+            height:
+              value: 280
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    brands:
+      type: contentReference
+      value: ${#jptr:/ref-b8459f54-ef6b-4c97-8790-01e1a907f023-brands/entries}
+    displayName:
+      type: text
+      value: 'Apparel Flash Sale: Limited Time Offers'
+  _dataResources:
+    ref-b8459f54-ef6b-4c97-8790-01e1a907f023-brands:
+      type: uniformContentInternalReference
+      variables:
+        locale: ${locale}
+        entryIds: >-
+          2bd4a0be-a905-4bd8-9038-ee80cb035d86,6a8ca31b-9382-4736-be31-d875d7d74791
+  _locales:
+    - en
+created: '2025-03-12T04:03:49.032272+00:00'
+modified: '2025-03-12T04:04:09.261708+00:00'
+pattern: false

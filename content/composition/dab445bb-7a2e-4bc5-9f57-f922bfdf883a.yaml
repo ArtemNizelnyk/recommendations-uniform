@@ -1,0 +1,55 @@
+composition:
+  _name: 'Grocery Bonanza: Fresh Deals Daily'
+  _id: dab445bb-7a2e-4bc5-9f57-f922bfdf883a
+  _slug: grocery-bonanza--fresh-deals-daily
+  type: deal
+  parameters:
+    image:
+      type: asset
+      value:
+        - _id: c1fee7c9-86fc-47d1-9a5a-092e8c30762e
+          type: image
+          fields:
+            id:
+              type: text
+              value: bcafe4fa-1054-4d84-bc49-406c8209969b
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/nHusFKm2TpOfm__WvORxZQ-image.png
+              type: text
+            file:
+              type: file
+              value: a738cbe8-1a8d-435a-a180-de669d5ad606
+            size:
+              value: 994099
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 900
+              type: number
+            height:
+              value: 675
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    brands:
+      type: contentReference
+      value: ${#jptr:/ref-dab445bb-7a2e-4bc5-9f57-f922bfdf883a-brands/entries}
+    displayName:
+      type: text
+      value: 'Grocery Bonanza: Fresh Deals Daily'
+  _dataResources:
+    ref-dab445bb-7a2e-4bc5-9f57-f922bfdf883a-brands:
+      type: uniformContentInternalReference
+      variables:
+        locale: ${locale}
+        entryIds: 53aef820-3193-47b5-87a6-25cc3555c368
+  _locales:
+    - en
+created: '2025-03-12T04:06:51.800508+00:00'
+modified: '2025-03-12T04:07:13.013849+00:00'
+pattern: false

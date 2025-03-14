@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=<https://uniform.app/schemas/json-schema/component-definition/v1.json>
+$schema: https://uniform.app/schemas/json-schema/component-definition/v1.json
+id: dealforentry
+name: dealForEntry
+icon: screen
+parameters:
+  - id: displayName
+    name: Display name
+    type: text
+    typeConfig:
+      required: true
+  - id: brands
+    name: Brands
+    type: contentReference
+    typeConfig:
+      isMulti: true
+      allowedContentTypes:
+        - brand
+  - id: targeting
+    name: Targeting
+    type: text
+    typeConfig: null
+  - id: compositionData
+    name: Composition data
+    type: json
+    typeConfig: {}
+  - id: image
+    name: image
+    type: asset
+    typeConfig:
+      allowedTypes:
+        - image
+useTeamPermissions: true
+slots: []
+titleParameter: displayName
+thumbnailParameter: image
+canBeComposition: true
+created: '2025-03-14T14:55:45.664249+00:00'
+updated: '2025-03-14T14:55:45.664249+00:00'

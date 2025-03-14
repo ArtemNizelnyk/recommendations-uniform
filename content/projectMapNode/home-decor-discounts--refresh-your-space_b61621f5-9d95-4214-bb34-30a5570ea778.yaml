@@ -1,0 +1,9 @@
+id: b61621f5-9d95-4214-bb34-30a5570ea778
+name: 'Home Decor Discounts: Refresh Your Space'
+order: 500
+path: /:locale/deal-compositions/home-decor-discounts--refresh-your-space
+type: composition
+pathSegment: home-decor-discounts--refresh-your-space
+data: {}
+compositionId: 83ed82c2-72d2-4783-8503-e6f625ae7580
+projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9

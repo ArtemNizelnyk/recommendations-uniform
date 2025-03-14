@@ -1,0 +1,61 @@
+composition:
+  _name: American deal
+  _id: 58637d83-65fc-4a4e-8e2d-402b27ae3ddb
+  _slug: american-deal
+  type: deal
+  parameters:
+    image:
+      type: asset
+      value:
+        - _id: 3a4451d4-0372-40ca-a84c-01c772589fb4
+          type: image
+          fields:
+            id:
+              type: text
+              value: 91855397-6c7e-4242-9caa-ccecb5d4ab4c
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/ZaHXQArbSUmjYEETlHnkbw-image.png
+              type: text
+            file:
+              type: file
+              value: 31286848-b9f6-4e96-8e16-839a3fdc47c4
+            size:
+              value: 901047
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 1600
+              type: number
+            height:
+              value: 889
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    brands:
+      type: contentReference
+      value: ${#jptr:/ref-58637d83-65fc-4a4e-8e2d-402b27ae3ddb-brands/entries}
+    displayName:
+      type: text
+      value: ${#jptr:/Deal Content/entry/fields/displayName/value}
+  _dataResources:
+    Deal Content:
+      type: deal
+      variables:
+        locale: ${locale}
+        entryId: e351baf7-dac7-4e30-af1e-2c36315c39dd
+    ref-58637d83-65fc-4a4e-8e2d-402b27ae3ddb-brands:
+      type: uniformContentInternalReference
+      variables:
+        locale: ${locale}
+        entryIds: >-
+          53aef820-3193-47b5-87a6-25cc3555c368,ab57d7f9-2284-4dd0-ba4b-f200579b9117,06b03cc3-d108-4504-a578-825190ea17ff
+  _locales:
+    - en
+created: '2025-03-12T01:05:36.820012+00:00'
+modified: '2025-03-12T03:34:36.070386+00:00'
+pattern: false

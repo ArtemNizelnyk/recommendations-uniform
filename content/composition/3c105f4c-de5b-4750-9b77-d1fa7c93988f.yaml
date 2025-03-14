@@ -1,0 +1,56 @@
+composition:
+  _name: 'Tech Tuesday Sale: Up to 50% Off'
+  _id: 3c105f4c-de5b-4750-9b77-d1fa7c93988f
+  _slug: tech-tuesday-sale--up-to-50--off
+  type: deal
+  parameters:
+    image:
+      type: asset
+      value:
+        - _id: 3c4bede5-3e06-4809-ade9-4a733ee19924
+          type: image
+          fields:
+            id:
+              type: text
+              value: 00dd8ce1-2560-42de-b331-b29782fc50e2
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/k46b6P6bTs-5YeYJRsCYZQ-image.png
+              type: text
+            file:
+              type: file
+              value: 85a5bc42-8e64-4ca4-9028-397748195eb4
+            size:
+              value: 80952
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 328
+              type: number
+            height:
+              value: 154
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    brands:
+      type: contentReference
+      value: ${#jptr:/ref-3c105f4c-de5b-4750-9b77-d1fa7c93988f-brands/entries}
+    displayName:
+      type: text
+      value: 'Tech Tuesday Sale: Up to 50% Off'
+  _dataResources:
+    ref-3c105f4c-de5b-4750-9b77-d1fa7c93988f-brands:
+      type: uniformContentInternalReference
+      variables:
+        locale: ${locale}
+        entryIds: >-
+          b16e536e-85e5-48b8-965f-bfe607fce861,eca3c9c3-c74a-40a2-8f1f-5b2af05b9390
+  _locales:
+    - en
+created: '2025-03-12T04:03:08.782613+00:00'
+modified: '2025-03-12T04:03:30.140792+00:00'
+pattern: false

@@ -1,0 +1,55 @@
+composition:
+  _name: Descuentos en Productos de Belleza
+  _id: e6e7476e-9da9-4f0e-a149-f138f2a1e222
+  _slug: descuentos-en-productos-de-belleza
+  type: deal
+  parameters:
+    image:
+      type: asset
+      value:
+        - _id: eebfd847-c61a-4a26-bf5a-5b8fe9b99a67
+          type: image
+          fields:
+            id:
+              type: text
+              value: a53ea4b2-c267-46fa-9329-eda9c953d88a
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/ifc0rHHJSYq6lnz2af2A5Q-image.png
+              type: text
+            file:
+              type: file
+              value: a99250d9-b6b0-4897-9ca3-dc8a11c451bc
+            size:
+              value: 265427
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 626
+              type: number
+            height:
+              value: 417
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    brands:
+      type: contentReference
+      value: ${#jptr:/ref-e6e7476e-9da9-4f0e-a149-f138f2a1e222-brands/entries}
+    displayName:
+      type: text
+      value: Descuentos en Productos de Belleza
+  _dataResources:
+    ref-e6e7476e-9da9-4f0e-a149-f138f2a1e222-brands:
+      type: uniformContentInternalReference
+      variables:
+        locale: ${locale}
+        entryIds: 127a1b23-25b1-45d1-8218-6a16d02d3a4f
+  _locales:
+    - en
+created: '2025-03-12T04:01:24.62963+00:00'
+modified: '2025-03-12T04:01:51.088269+00:00'
+pattern: false

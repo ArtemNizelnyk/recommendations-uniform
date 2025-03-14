@@ -5,21 +5,31 @@ import { componentResolver } from '@/components';
 import locales from '@/i18n/locales.json';
 import retrieveRoute from '@/utils/retrieveRoute';
 import { transformRecommendationsInComposition } from '@/utils/transformRecommendations';
+import { transformRecommendationsForEntry } from '@/utils/transformRecommendationsForEntry';
 
 export default async function Home(props: PageParameters) {
   const route = await retrieveRoute(props, locales.defaultLocale);
 
-  // Transform the composition data to wrap deals in a personalization component
-  if (route && route.type === 'composition') {
-    // Check if the route has a composition property
+  // Transform the composition data based on the component type
+  if (route && route.type === 'composition' && route.compositionApiResponse.composition) {
     const composition = route.compositionApiResponse.composition;
-    if (composition) {
-      // Transform the composition
+    
+    // Check if the composition contains a recommendationsList component
+    const hasRecommendationsList = checkForComponentType(composition, 'recommendationsList');
+    
+    // Check if the composition contains a recommendationsListWithEntry component
+    const hasRecommendationsListWithEntry = checkForComponentType(composition, 'recommendationsListWithEntry');
+    
+    // Apply the appropriate transformation
+    if (hasRecommendationsList) {
       const transformedComposition = await transformRecommendationsInComposition(composition);
-      // Only assign if the transformed composition is not null
       if (transformedComposition) {
-        // Use type assertion to ensure the transformed composition matches the expected type
-        route.compositionApiResponse.composition = transformedComposition as typeof composition;
+        route.compositionApiResponse.composition = transformedComposition;
+      }
+    } else if (hasRecommendationsListWithEntry) {
+      const transformedComposition = await transformRecommendationsForEntry(composition);
+      if (transformedComposition) {
+        route.compositionApiResponse.composition = transformedComposition;
       }
     }
   }
@@ -37,6 +47,26 @@ export default async function Home(props: PageParameters) {
         resolveEmptyPlaceholder={emptyPlaceholderResolver}
       />
     </DesignExtensionsProvider>
+  );
+}
+
+// Helper function to check if a composition contains a component of a specific type
+function checkForComponentType(composition: Record<string, unknown>, componentType: string): boolean {
+  if (!composition.slots || typeof composition.slots !== 'object') {
+    return false;
+  }
+
+  const slots = composition.slots as Record<string, unknown>;
+  if (!slots.pageContent || !Array.isArray(slots.pageContent)) {
+    return false;
+  }
+
+  return slots.pageContent.some(
+    (component: unknown) =>
+      typeof component === 'object' &&
+      component !== null &&
+      'type' in component &&
+      component.type === componentType
   );
 }
 

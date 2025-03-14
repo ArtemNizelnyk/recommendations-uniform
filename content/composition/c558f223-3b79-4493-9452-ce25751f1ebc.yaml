@@ -1,0 +1,55 @@
+composition:
+  _name: 'Fitness Frenzy: Gear Up and Save'
+  _id: c558f223-3b79-4493-9452-ce25751f1ebc
+  _slug: fitness-frenzy--gear-up-and-save
+  type: deal
+  parameters:
+    image:
+      type: asset
+      value:
+        - _id: 998d16db-67d3-4b04-a989-54f00b2c482c
+          type: image
+          fields:
+            id:
+              type: text
+              value: 85f9c557-9a85-455f-8416-fcdc8bbdb913
+            url:
+              value: >-
+                https://img.uniform.global/p/nNk0lzzYSgqBmoaMXzTmwA/2OB9tI4OQie1a1tk9ArNBA-image.png
+              type: text
+            file:
+              type: file
+              value: 03b862e1-e3c7-4e23-b0ec-0d87417f8249
+            size:
+              value: 82863
+              type: number
+            title:
+              type: text
+              value: image.png
+            width:
+              value: 225
+              type: number
+            height:
+              value: 225
+              type: number
+            mediaType:
+              value: image/png
+              type: text
+          _source: uniform-assets
+    brands:
+      type: contentReference
+      value: ${#jptr:/ref-c558f223-3b79-4493-9452-ce25751f1ebc-brands/entries}
+    displayName:
+      type: text
+      value: 'Fitness Frenzy: Gear Up and Save'
+  _dataResources:
+    ref-c558f223-3b79-4493-9452-ce25751f1ebc-brands:
+      type: uniformContentInternalReference
+      variables:
+        locale: ${locale}
+        entryIds: ab57d7f9-2284-4dd0-ba4b-f200579b9117
+  _locales:
+    - en
+created: '2025-03-12T04:05:18.857803+00:00'
+modified: '2025-03-12T04:05:40.980038+00:00'
+pattern: false

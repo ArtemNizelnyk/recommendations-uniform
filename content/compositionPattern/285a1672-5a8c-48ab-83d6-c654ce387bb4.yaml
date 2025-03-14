@@ -1,0 +1,38 @@
+composition:
+  _name: Deal Pattern
+  _id: 285a1672-5a8c-48ab-83d6-c654ce387bb4
+  type: deal
+  parameters:
+    image:
+      type: asset
+      value: ${#jptr:/Deal Content/entry/fields/responsiveImage/value}
+    displayName:
+      type: text
+      value: >-
+        ${#jptr:/Deal Content/entry/fields/displayName/value}${#jptr:/Deal By
+        Name Content/entries/0/entry/fields/displayName/value}
+    compositionData:
+      type: json
+      value: ${#jptr:/Deal Content/entry/fields/brands/value}
+  _dataResources:
+    Deal Content:
+      type: deal
+      variables:
+        locale: ${locale}
+        entryId: fa17b819-ff53-4227-ad13-0360749ff23b
+      isPatternParameter: true
+      ignorePatternParameterDefault: true
+    Deal By Name Content:
+      type: dealByName
+      variables:
+        locale: ${locale}
+        search: American Deal
+        filters: '{"type[eq]":"deal"}'
+        contentTypes: deal
+      isPatternParameter: true
+      ignorePatternParameterDefault: true
+  _locales:
+    - en
+created: '2025-03-14T14:35:53.184689+00:00'
+modified: '2025-03-14T14:41:18.002404+00:00'
+pattern: true

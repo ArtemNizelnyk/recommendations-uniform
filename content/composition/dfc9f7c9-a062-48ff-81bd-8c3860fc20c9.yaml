@@ -1,0 +1,65 @@
+composition:
+  _name: composition-entry-recommendations
+  _id: dfc9f7c9-a062-48ff-81bd-8c3860fc20c9
+  _slug: composition-entry-recommendations
+  type: page
+  _dataResources:
+    Deal List Content:
+      type: dealList
+      variables:
+        locale: ${locale}
+        search: ''
+        filters: '{"type[eq]":"deal"}'
+        contentTypes: deal
+  _overrides:
+    dfc9f7c9-a062-48ff-81bd-8c3860fc20c9|38f88562-6b70-411b-a550-ada8514eef22:
+      dataResources:
+        Brand Content:
+          type: brand
+          variables:
+            locale: ${locale}
+            entryId: ab57d7f9-2284-4dd0-ba4b-f200579b9117
+    dfc9f7c9-a062-48ff-81bd-8c3860fc20c9|dc2e95be-21b5-4476-a309-f8a34922f528:
+      slots:
+        $slotSectionItems:
+          - _id: 396a6b69-b7ca-48c4-8cdb-87ccb8a38719
+            type: recommendationsListWithEntry
+            slots:
+              deals:
+                - _id: 4eb0b546-9b83-44df-ac45-9342630d6857
+                  type: $loop
+                  slots:
+                    body:
+                      - _id: 2c68fbbb-27ad-45d6-9cf3-b9baf5368e91
+                        type: dealforentry
+                        parameters:
+                          image:
+                            type: asset
+                            value: >-
+                              ${#jptr:/Deal List Content entries Loop
+                              Item/entry/fields/responsiveImage/value}
+                          displayName:
+                            type: text
+                            value: >-
+                              ${#jptr:/Deal List Content entries Loop
+                              Item/entry/fields/displayName/value}
+                          compositionData:
+                            type: json
+                            value: >-
+                              ${#jptr:/Deal List Content entries Loop
+                              Item/entry/fields/brands/value}
+                  _dataResources:
+                    Deal List Content entries Loop Item:
+                      type: sys-reserved-loop
+                      variables:
+                        connectedData: '#jptr:/Deal List Content/entries:fa=c'
+            parameters:
+              displayname:
+                type: text
+                value: Recomendations
+  _locales:
+    - en
+  _pattern: f9c058ea-c40d-4435-ac5a-53423cf654dc
+created: '2025-03-14T14:28:09.426949+00:00'
+modified: '2025-03-14T14:58:01.327763+00:00'
+pattern: false

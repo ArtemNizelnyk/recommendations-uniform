@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=<https://uniform.app/schemas/json-schema/component-definition/v1.json>
+$schema: https://uniform.app/schemas/json-schema/component-definition/v1.json
+id: recommendationsListWithEntry
+name: Recommendations List With Entry
+icon: screen
+parameters:
+  - id: displayname
+    name: displayName
+    type: text
+    typeConfig:
+      required: true
+useTeamPermissions: true
+slots:
+  - id: deals
+    name: Deals
+    allowedComponents:
+      - deal
+      - $personalization
+      - $loop
+      - dealforentry
+      - dealforentry
+    allowAllComponents: false
+    inheritAllowedComponents: false
+    patternsInAllowedComponents: false
+titleParameter: displayname
+canBeComposition: false
+created: '2025-03-14T14:30:09.324601+00:00'
+updated: '2025-03-14T14:57:29.466622+00:00'

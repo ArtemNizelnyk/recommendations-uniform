@@ -2,17 +2,20 @@ import { FC } from 'react';
 import { ComponentProps, UniformSlot, UniformText } from '@uniformdev/canvas-next-rsc/component';
 
 // Here, you can add parameters to be used on the canvas side.
-export type RecommendationsListParameters = {
+export type RecommendationsListWithEntryParameters = {
   displayName?: string;
 };
 // Here, you can add slots names to be used on the canvas side.
-enum RecommendationsListSlots {
+enum RecommendationsListWithEntrySlots {
   deals = 'deals',
 }
 
-type RecommendationsListProps = ComponentProps<RecommendationsListParameters, RecommendationsListSlots>;
+type RecommendationsListWithEntryProps = ComponentProps<
+  RecommendationsListWithEntryParameters,
+  RecommendationsListWithEntrySlots
+>;
 
-const RecommendationsList: FC<RecommendationsListProps> = ({ component, context, slots }) => {
+const RecommendationsListWithEntry: FC<RecommendationsListWithEntryProps> = ({ component, context, slots }) => {
   // Check if we have deals to display
   const hasDeals = slots.deals && 
                   (Array.isArray(slots.deals) ? 
@@ -68,4 +71,4 @@ const RecommendationsList: FC<RecommendationsListProps> = ({ component, context,
   );
 };
 
-export default RecommendationsList;
+export default RecommendationsListWithEntry; 

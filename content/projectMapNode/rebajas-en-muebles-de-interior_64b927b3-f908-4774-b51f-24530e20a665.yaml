@@ -1,0 +1,9 @@
+id: 64b927b3-f908-4774-b51f-24530e20a665
+name: Rebajas en Muebles de Interior
+order: 500
+path: /:locale/deal-compositions/rebajas-en-muebles-de-interior
+type: composition
+pathSegment: rebajas-en-muebles-de-interior
+data: {}
+compositionId: 669fefad-cb83-4d11-a6c1-4c74f1c1f598
+projectMapId: 537d11ff-9ebe-4420-9682-36694477e2f9
