@@ -4,7 +4,6 @@ This is the latest version of the Uniform Component Starter Kit (CSK) - version 
 
 > If you are looking for the Next.js Page Router version, check out this older [repo](https://github.com/uniformdev/uniform-component-starter-kit) instead.
 
-
 ## Prerequisites
 
 - A Uniform account with the ability to create a new empty project. If you don't have a Uniform account, you can request a trial account [here](https://uniform.dev/try).
@@ -52,7 +51,6 @@ Alternatively you can use `npm run pull:content:dev` and `npm run push:content:d
 
 > Developer-owned content typically scoped to components, content types, component patterns but can vary based on the stage of your project lifecycle and your preferences. For example, at some point, you may not want to sync assets like images, videos, etc.
 
-
 # Uniform Recommendations Implementation
 
 This project demonstrates three different approaches to implementing personalized recommendations using Uniform DXP. Each approach has its own advantages and use cases, providing flexibility in how you deliver personalized content to your users.
@@ -74,12 +72,14 @@ Each approach leverages Uniform's capabilities in different ways, from direct AP
 This approach uses direct API calls to fetch and filter recommendations based on user signals and enrichments.
 
 **Key Components:**
+
 - `Recommendations.tsx`: Client-side component that fetches recommendations based on user signals
 - `Deal.tsx`: Displays individual deal cards with brand information
 - `api/recommendations/route.ts`: Server-side API endpoint that queries Uniform CMS
 - `EnrichmentScoreComponent.tsx`: Tracks user interactions to build user profiles
 
 **How it works:**
+
 1. The `Recommendations` component extracts user signals from localStorage (ufvisitor)
 2. It identifies the user type (American, Spanish, or Everyone) based on session scores
 3. It collects brand enrichments from the user's profile
@@ -88,6 +88,7 @@ This approach uses direct API calls to fetch and filter recommendations based on
 6. Results are displayed as deal cards with pagination
 
 **Advantages:**
+
 - Real-time filtering and sorting based on the latest user data
 - Direct control over the recommendation algorithm
 - Ability to implement complex sorting logic on the server
@@ -97,6 +98,7 @@ This approach uses direct API calls to fetch and filter recommendations based on
 This approach transforms compositions on the server to wrap deals in personalization components based on brand data.
 
 **Key Components:**
+
 - `transformRecommendations.ts`: Server-side utility that transforms compositions
 - `Deal.tsx`: Component that resolves brand data from composition or API
 - `DealGrid.tsx`: Container for displaying multiple deals
@@ -105,6 +107,7 @@ This approach transforms compositions on the server to wrap deals in personaliza
 - `page.tsx`: Page component that applies transformations
 
 **How it works:**
+
 1. When a page loads, `page.tsx` checks if it contains a `recommendationsList` component
 2. If found, it applies the `transformRecommendationsInComposition` transformation
 3. This transformation:
@@ -116,6 +119,7 @@ This approach transforms compositions on the server to wrap deals in personaliza
 4. The `Deal` component then resolves brand data either from direct references or by making API calls
 
 **Advantages:**
+
 - Server-side transformation means personalization logic runs before the page is sent to the client
 - Reuses existing composition data without requiring additional API calls
 - Maintains a clean separation between content structure and personalization logic
@@ -125,11 +129,13 @@ This approach transforms compositions on the server to wrap deals in personaliza
 This approach uses pre-provided entry data to create personalized recommendations without additional API calls.
 
 **Key Components:**
+
 - `RecommendationCompositionEntry.tsx`: Component for displaying recommendations with entry data
 - `transformRecommendationsForEntry.ts`: Server-side transformation for entry-based recommendations
 - `DealForEntry.tsx`: Component that renders deals using pre-provided brand data
 
 **How it works:**
+
 1. When a page loads, `page.tsx` checks if it contains a `recommendationsListWithEntry` component
 2. If found, it applies the `transformRecommendationsForEntry` transformation
 3. This transformation:
@@ -140,6 +146,7 @@ This approach uses pre-provided entry data to create personalized recommendation
 4. The `DealForEntry` component renders deals using the brand data that's already included in the composition
 
 **Advantages:**
+
 - No additional API calls needed to resolve brand data
 - Faster rendering as all data is available immediately
 - Simplified component implementation with direct access to all required data

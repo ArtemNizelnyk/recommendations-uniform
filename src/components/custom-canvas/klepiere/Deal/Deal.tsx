@@ -177,7 +177,7 @@ const Deal: FC<DealProps> = ({ component, context }) => {
   }, [compositionData, directBrands]);
 
   return (
-    <div className="flex h-full w-full max-w-sm flex-col overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
+    <div className="flex size-full max-w-sm flex-col overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
       {/* Colored top bar */}
       <div className="h-2 bg-indigo-600"></div>
 

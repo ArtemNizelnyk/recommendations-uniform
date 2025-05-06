@@ -17,10 +17,14 @@ type RecommendationsListWithEntryProps = ComponentProps<
 
 const RecommendationsListWithEntry: FC<RecommendationsListWithEntryProps> = ({ component, context, slots }) => {
   // Check if we have deals to display
-  const hasDeals = slots.deals && 
-                  (Array.isArray(slots.deals) ? 
-                    slots.deals.length > 0 : 
-                    (typeof slots.deals === 'object' && slots.deals.items && Array.isArray(slots.deals.items) && slots.deals.items.length > 0));
+  const hasDeals =
+    slots.deals &&
+    (Array.isArray(slots.deals)
+      ? slots.deals.length > 0
+      : typeof slots.deals === 'object' &&
+        slots.deals.items &&
+        Array.isArray(slots.deals.items) &&
+        slots.deals.items.length > 0);
 
   return (
     <section className="bg-gradient-to-b from-gray-50 to-white px-4 py-16 sm:px-6 lg:px-8">
@@ -41,7 +45,7 @@ const RecommendationsListWithEntry: FC<RecommendationsListWithEntryProps> = ({ c
         </div>
 
         {hasDeals ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+          <div className="grid grid-cols-1 justify-items-center gap-6 md:grid-cols-2 lg:grid-cols-3">
             <UniformSlot data={component} context={context} slot={slots.deals} />
           </div>
         ) : (
@@ -71,4 +75,4 @@ const RecommendationsListWithEntry: FC<RecommendationsListWithEntryProps> = ({ c
   );
 };
 
-export default RecommendationsListWithEntry; 
+export default RecommendationsListWithEntry;

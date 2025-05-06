@@ -1,12 +1,12 @@
 import { ComponentMapping } from '@uniformdev/csk-components/utils/createComponentResolver';
 import CustomComponent from './CustomComponent';
 import Deal from './klepiere/Deal/Deal';
+import DealForEntry from './klepiere/DealForEntry/DealForEntry';
 import DealGrid from './klepiere/DealGrid/DealGrid';
 import EnrichmentScoreComponent from './klepiere/EnrichmentScore/EnrichmentScoreComponent';
+import RecommendationCompositionEntry from './klepiere/RecomendationCompositionEntry/RecommendationCompositionEntry';
 import Recommendations from './klepiere/Recommendations/Recommendations';
 import RecommendationsList from './klepiere/RecommendationsList/RecommendationsList';
-import RecommendationCompositionEntry from './klepiere/RecomendationCompositionEntry/RecommendationCompositionEntry';
-import DealForEntry from './klepiere/DealForEntry/DealForEntry';
 // Here, you can add your own component or customize an existing CSK component with your logic or styles.
 export const customComponentsMapping: ComponentMapping = {
   // This is a simple example of how you can add your own components.

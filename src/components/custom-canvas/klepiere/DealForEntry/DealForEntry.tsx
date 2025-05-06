@@ -56,6 +56,41 @@ interface BrandData {
   logo: string;
 }
 
+// Define the type for a single brand data item from the composition
+type BrandDataItem = {
+  projectId?: string;
+  state?: number;
+  created?: string;
+  modified?: string;
+  uiStatus?: string;
+  pattern?: boolean;
+  entry?: {
+    type?: string;
+    _id?: string;
+    _name?: string;
+    _slug?: string;
+    _thumbnail?: string;
+    fields?: {
+      brandLogo?: {
+        type?: string;
+        value?: Array<{
+          _id?: string;
+          type?: string;
+          fields?: {
+            url?: { value?: string };
+          };
+          _source?: string;
+        }>;
+      };
+      displayname?: {
+        type?: string;
+        value?: string;
+      };
+    };
+    _locales?: string[];
+  };
+};
+
 type DealForEntryProps = ComponentProps<DealForEntryParameters>;
 
 const DealForEntry: FC<DealForEntryProps> = ({ component, context, displayName, compositionData, image }) => {
@@ -69,7 +104,7 @@ const DealForEntry: FC<DealForEntryProps> = ({ component, context, displayName, 
   // Extract brands directly from compositionData
   const brandsData = Array.isArray(compositionData) ? compositionData : [];
 
-  const brands: BrandData[] = brandsData.map((brandData: any) => {
+  const brands: BrandData[] = brandsData.map((brandData: BrandDataItem) => {
     // Extract brand logo URL
     let logoUrl = '';
     const brandLogo = brandData.entry?.fields?.brandLogo?.value;
@@ -88,7 +123,7 @@ const DealForEntry: FC<DealForEntryProps> = ({ component, context, displayName, 
   });
 
   return (
-    <div className="flex h-full w-full max-w-sm flex-col overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
+    <div className="flex size-full max-w-sm flex-col overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
       {/* Colored top bar */}
       <div className="h-2 bg-indigo-600"></div>
 

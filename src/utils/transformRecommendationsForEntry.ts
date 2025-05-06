@@ -101,25 +101,24 @@ export async function transformRecommendationsForEntry(
 
     // Extract brand names directly from the composition data
     const brandNames = compositionData
-      .filter(item => 
-        item && 
-        typeof item === 'object' && 
-        item.entry && 
-        typeof item.entry === 'object' && 
-        (
-          (item.entry.fields && 
-           typeof item.entry.fields === 'object' && 
-           item.entry.fields.displayname && 
-           typeof item.entry.fields.displayname === 'object' && 
-           typeof item.entry.fields.displayname.value === 'string') ||
-          typeof item.entry._name === 'string'
-        )
+      .filter(
+        item =>
+          item &&
+          typeof item === 'object' &&
+          item.entry &&
+          typeof item.entry === 'object' &&
+          ((item.entry.fields &&
+            typeof item.entry.fields === 'object' &&
+            item.entry.fields.displayname &&
+            typeof item.entry.fields.displayname === 'object' &&
+            typeof item.entry.fields.displayname.value === 'string') ||
+            typeof item.entry._name === 'string')
       )
       .map(item => {
         const entry = item.entry as Record<string, unknown>;
         const fields = entry.fields as Record<string, unknown> | undefined;
         const displayname = fields?.displayname as Record<string, unknown> | undefined;
-        
+
         // Use displayname.value if available, otherwise fall back to _name
         return (displayname?.value as string) || (entry._name as string);
       });
@@ -150,4 +149,4 @@ export async function transformRecommendationsForEntry(
   recommendationsSlots.deals = [personalizationComponent];
 
   return transformedComposition;
-} 
+}
