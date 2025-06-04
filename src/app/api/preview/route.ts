@@ -1,13 +1,14 @@
-import { createPreviewPOSTRouteHandler, createPreviewOPTIONSRouteHandler } from '@uniformdev/canvas-next-rsc/handler';
+import { cookies, draftMode } from 'next/headers';
+import { redirect } from 'next/navigation';
+import { type NextRequest } from 'next/server';
+
 import {
   IN_CONTEXT_EDITOR_PLAYGROUND_QUERY_STRING_PARAM,
   IN_CONTEXT_EDITOR_QUERY_STRING_PARAM,
   isAllowedReferrer,
   SECRET_QUERY_STRING_PARAM,
 } from '@uniformdev/canvas';
-import { cookies, draftMode } from 'next/headers';
-import { redirect } from 'next/navigation';
-import { type NextRequest } from 'next/server';
+import { createPreviewPOSTRouteHandler, createPreviewOPTIONSRouteHandler } from '@uniformdev/canvas-next-rsc/handler';
 
 export const POST = createPreviewPOSTRouteHandler();
 export const OPTIONS = createPreviewOPTIONSRouteHandler();
@@ -44,7 +45,7 @@ export type CreatePreviewGETRouteHandlerOptions = {
   playgroundPath?: string;
 };
 
-export const customCreatePreviewGETRouteHandler = (options?: CreatePreviewGETRouteHandlerOptions) => {
+const customCreatePreviewGETRouteHandler = (options?: CreatePreviewGETRouteHandlerOptions) => {
   return async (request: NextRequest) => {
     const isConfigCheck = getQueryParam(request, 'is_config_check') === 'true';
 
@@ -150,7 +151,6 @@ export const customCreatePreviewGETRouteHandler = (options?: CreatePreviewGETRou
         partitioned: true,
       });
     }
-
 
     const redirectionUrl = new URL(pathToRedirectTo, BASE_URL_EXAMPLE);
     assignRequestQueryToSearchParams(redirectionUrl.searchParams, searchParams);
